@@ -12,6 +12,7 @@ public class TicTacToeWeb implements SparkApplication {
 		if (port != null) {
             setPort(Integer.valueOf(port));
         } 
+        tttWeb.init();
 	}
 
 	public void init() {
