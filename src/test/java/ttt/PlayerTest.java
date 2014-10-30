@@ -11,7 +11,7 @@ public class PlayerTest {
 
 	@Test
 	public void testGetName() {
-		assertEquals("Sindri", Player.getName)
+		assertEquals("Sindri", Player.getName);
 	}
 
 
