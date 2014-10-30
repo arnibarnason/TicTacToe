@@ -9,4 +9,3 @@ jdk:
     - oraclejdk7
 script:
     - ./gradlew check
-    - ./gradlew seleniumXvfb

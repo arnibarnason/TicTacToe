@@ -18,13 +18,13 @@ public class TestIndexPageImageAndTitle {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "https://erkimoddarar.herokuapp.com/";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    baseUrl = "https://localhost/";
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
   }
 
   @Test
   public void testIndexPageImageAndTitle() throws Exception {
-    driver.get("https://erkimoddarar.herokuapp.com/");
+    driver.get("https://localhost/");
     assertTrue(isElementPresent(By.cssSelector("img.img-responsive")));
     assertEquals("Erkimoddarar", driver.getTitle());
   }
