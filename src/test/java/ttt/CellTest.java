@@ -53,6 +53,4 @@ public class CellTest {
 		cell.setPartOfWinningLine();
 		assertEquals(true, cell.getPartOfWinningLine());
 	}
-
-
 }
