@@ -38,7 +38,13 @@ public class TicTacToe {
 			return getPlayer2();
 		}
 	} 
+/*
+	public boolean isOver() {
 
+		return _board.isFull() || _board.isWinner();
+
+	}
+*/
 
 
 
