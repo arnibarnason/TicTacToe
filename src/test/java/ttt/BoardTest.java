@@ -49,6 +49,11 @@ public class BoardTest {
 
 
 
+        @Test
+        public void isWinnerTest() {
+            Board board = new Board();
+            assertEquals(false, board.isWinner());
+        }
 
 
 
