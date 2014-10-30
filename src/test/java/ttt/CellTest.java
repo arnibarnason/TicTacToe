@@ -42,9 +42,16 @@ public class CellTest {
 	}
 
 	@Test
-	public void getPartOfWinningLine() {
+	public void getPartOfWinningLineTest() {
 		Cell cell = new Cell(0);
 		assertEquals(false, cell.getPartOfWinningLine());
+	}
+
+	@Test
+	public void setPartOfWinnigLineTest() {
+		Cell cell = new Cell(0);
+		cell.setPartOfWinningLine();
+		assertEquals(true, cell.getPartOfWinningLine());
 	}
 
 
