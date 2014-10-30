@@ -28,8 +28,21 @@ public class TicTacToe {
 	public Player getPlayer2() {
 		return _player2;
 	}
+	
+	public Player switchPlayer(){
+		if(_round % 2 == 0) {
+			return getPlayer1();
+		}
+		else {
+			return getPlayer2();
+		}
+	} 
+/*
+	public boolean isOver() {
+		return _board.isFull() || _board.isWinner();
 
-
+	}
+*/
 
 
 

@@ -29,6 +29,7 @@ public class Board {
 			for (int j = 0; j < _maxColumns; j++) {
 				if (count == number) {
 					this._board[i][j].setSign(sign);
+					this._board[i][j].setChecked();
 					return;
 				}
 				count++;
@@ -65,28 +66,43 @@ public class Board {
 
 
 	public boolean isWinner() {
+		return isWinnerHorizontalCheck() || isWinnerVerticalCheck() || isWinnerDiagonalCheck();
+	}
+
+	private boolean isWinnerHorizontalCheck() {
 		for(int i = 0; i < _maxRows; i++) {
-			// vertical
-			if(_board[0][i].isChecked() && _board[0][i].getSign() == _board[1][i].getSign() &&
-				_board[1][i].getSign() == _board[2][i].getSign()) {
-				return true;
-			}
-			// horizontal
-			if(_board[i][0].isChecked() && _board[i][0].getSign() == _board[i][1].getSign() &&
+			if(_board[i][0].isChecked() && 
+				_board[i][0].getSign() == _board[i][1].getSign() &&
 				_board[i][1].getSign() == _board[i][2].getSign()) {
 				return true;
 			}
 		}
+		return false;
+	}
 
-		// diagonal line
-		if(_board[0][0].isChecked() && _board[0][0].getSign() == _board[1][1].getSign() &&
+	private boolean isWinnerVerticalCheck() {
+		for(int i = 0; i < _maxRows; i++) {
+			if(_board[0][i].isChecked() &&
+				_board[0][i].getSign() == _board[1][i].getSign() &&
+				_board[1][i].getSign() == _board[2][i].getSign()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean isWinnerDiagonalCheck() {
+		if(_board[0][0].isChecked() &&
+			_board[0][0].getSign() == _board[1][1].getSign() &&
 			_board[1][1].getSign() == _board[2][2].getSign()) {
 			return true;
 		}
-		if(_board[2][0].isChecked() && _board[2][0].getSign() == _board[1][1].getSign() &&
+		if(_board[2][0].isChecked() &&
+			_board[2][0].getSign() == _board[1][1].getSign() &&
 			_board[1][1].getSign() == _board[0][2].getSign()) {
 			return true;
 		}
 		return false;
 	}
 }
+
