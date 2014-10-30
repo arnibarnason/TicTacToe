@@ -18,11 +18,10 @@ public class TicTacToeWeb implements SparkApplication {
 	}
 
 	public void init() {
+
+		final TicTacToe game = new TicTacToe();
+
 		post(new Route("/game"){
-			final TicTacToe game = new TicTacToe();
-
-			// TODO: Game logic needed
-
             @Override
             public Object handle(Request request, Response response){
                 return game.greeting();
@@ -36,7 +35,7 @@ public class TicTacToeWeb implements SparkApplication {
 
                 // TODO: Game logic needed
                 
-                return;
+                return null;
             }
         });
 	}
