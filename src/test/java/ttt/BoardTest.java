@@ -55,6 +55,15 @@ public class BoardTest {
             assertEquals(false, board.isWinner());
         }
 
+        @Test
+        public void isWinnerTest2() {
+            Board board = new Board();
+            board.markCell(0, 'X');
+            board.markCell(1, 'X');
+            board.markCell(2, 'X');
+            assertEquals(true, board.isWinner());
+        }
+
 
 
 
