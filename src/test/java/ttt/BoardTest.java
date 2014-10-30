@@ -43,20 +43,6 @@ public class BoardTest {
             board.markCell(5, 'Z');
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         @Test
         public void displayBoardTest() {
             Board board = new Board();

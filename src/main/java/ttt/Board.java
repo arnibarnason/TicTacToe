@@ -48,27 +48,6 @@ public class Board {
 		return;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	public String displayBoard() {
 		String board = "";
 		for(int i = 0; i < _maxRows; i++) {
@@ -80,7 +59,6 @@ public class Board {
 		}
 		return board;
 	}
-
 
 	public boolean isFull() {
 		for(int i = 0; i < _maxRows; i++) {
