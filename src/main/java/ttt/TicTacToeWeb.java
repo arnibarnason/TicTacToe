@@ -27,9 +27,9 @@ public class TicTacToeWeb implements SparkApplication {
                 Integer cell = Integer.valueOf(request.queryParams("cellid"));
 
                 if(game.isOver()) {
-                	return null;
+                	return game.scoreMessage();
                 } else {
-                	game.playCell(cellid);
+                	game.playCell(cell);
                 	return null;
                 }
             }

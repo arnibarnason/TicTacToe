@@ -25,8 +25,8 @@ public class TicTacToeTest {
 	}
 
 	@Test
-	public void testGreeting() {
-		assertEquals("Hello World", ttt.greeting());
+	public void scoreMessage() {
+		assertEquals("Player 1: 0 : Player 2: 0", ttt.scoreMessage());
 	}
 
 	@Test

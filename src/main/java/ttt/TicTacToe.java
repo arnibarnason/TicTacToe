@@ -16,8 +16,9 @@ public class TicTacToe {
 		_ties = 0;
 	}	
 
-	public String greeting() {
-		return "Hello World";
+	public String scoreMessage() {
+		return "Player 1: " + _player1.getScore() 
+		+ " : Player 2: " + _player2.getScore();
 	}
 
 	public void increaseRound() {
