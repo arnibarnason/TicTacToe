@@ -69,8 +69,17 @@ public class Board {
 
 
 
-
-
+	public String displayBoard() {
+		String board = "";
+		for(int i = 0; i < _maxRows; i++) {
+			for(int j = 0; j < _maxColumns; j++) {
+				board = board + _board[i][j].getSign() + " | ";
+			}
+			board = board.substring(0, board.length() - 3);
+			board = board + "\n";
+		}
+		return board;
+	}
 
 
 	public boolean isFull() {
