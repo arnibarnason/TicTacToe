@@ -73,8 +73,11 @@ public class BoardTest {
             assertEquals(true, board.isWinner());
         }
 
-        
-
-
-
+        @Test
+        public void isWinnerDiagonal() {
+            Board board = new Board();
+            board.markCell(2, 'X');
+            board.markCell(4, 'X');
+            board.markCell(6, 'X');
+        }
 }
