@@ -7,6 +7,6 @@ public class BoardTest {
 
 /*		@Test
         public void () {
-                assertEquals(0, Board.markCell());
+            assertEquals(0, Board.markCell());
         }*/
 }
