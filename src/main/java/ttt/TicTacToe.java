@@ -42,7 +42,6 @@ public class TicTacToe {
 		}
 	} 
 
-
 	public boolean isOver() {
 		return _board.isFull() || _board.isWinner();
 
