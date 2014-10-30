@@ -18,6 +18,10 @@ public class Cell {
 		return _isChecked;
 	}
 
+	public void setChecked() {
+		_isChecked = true;
+	}
+
 
 
 
