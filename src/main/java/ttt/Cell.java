@@ -6,14 +6,19 @@ public class Cell {
 	private int _number;
 	private boolean _partOfWinningLine;
 
-	public Cell(char sign, int number) {
-		_sign = sign;
-		_number = number;
+
+	public Cell(int number) {
+		_sign = ' ';
 		_isChecked = false;
+		_number = number;
 		_partOfWinningLine = false;
 	}
 
-	
+	public boolean isChecked() {
+		return _isChecked;
+	}
+
+
 
 
 	
