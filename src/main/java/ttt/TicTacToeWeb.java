@@ -16,7 +16,7 @@ public class TicTacToeWeb implements SparkApplication {
 	}
 
 	public void init() {
-		post(new Route("/"){
+		post(new Route("/game"){
             @Override
             public Object handle(Request request, Response response){
                 return "Hello World!";
