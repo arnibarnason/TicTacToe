@@ -5,14 +5,14 @@ import org.junit.Test;
 
 public class PlayerTest {
 
-	public static void main(String args[]) {
+	/*public static void main(String args[]) {
 		org.junit.runner.JUnitcore.main("ttt.PlayerTest");
 	}
 
 	@Test
 	public void testGetName() {
 		assertEquals("Sindri", Player.getName);
-	}
+	}*/
 
 
 
