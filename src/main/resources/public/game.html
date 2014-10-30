@@ -41,9 +41,9 @@
                         data: "id=" + number
                     }).done(function(result) {
                         if (result === "X" || result === "O") {
-                            $("#"+number).html("x");
+                            $("#"+number).html(result);
                         } else {
-                            $("#score").html("cool");
+                            $("#score").html(result);
                         };
                         
                     });
