@@ -41,5 +41,11 @@ public class CellTest {
 		assertEquals(5, cell.getNumber());
 	}
 
+	@Test
+	public void getPartOfWinningLine() {
+		Cell cell = new Cell(0);
+		assertEquals(false, cell.getPartOfWinningLine());
+	}
+
 
 }

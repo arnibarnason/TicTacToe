@@ -34,6 +34,10 @@ public class Cell {
 		return _number;
 	}
 
+	public boolean getPartOfWinningLine() {
+		return _partOfWinningLine;
+	}
+
 
 
 
