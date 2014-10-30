@@ -13,6 +13,10 @@ public class TicTacToe {
 		_round = 0;
 	}	
 
+	public String greeting() {
+		return "Hello World";
+	}
+
 	public void increaseRound() {
 		_round++;
 	}
