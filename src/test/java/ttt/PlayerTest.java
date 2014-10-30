@@ -24,8 +24,8 @@ public class PlayerTest {
 
 	@Test
 	public void testSetName() {
-		p.setName("Magnús");
-		assertEquals("Magnús", p.getName());
+		p.setName("Magnus");
+		assertEquals("Magnus", p.getName());
 	}
 
 	@Test
