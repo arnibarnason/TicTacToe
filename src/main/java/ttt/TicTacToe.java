@@ -28,9 +28,8 @@ public class TicTacToe {
 	public Player getPlayer2() {
 		return _player2;
 	}
-
-	public Player switchPlayer(){
 	
+	public Player switchPlayer(){
 		if(_round % 2 == 0) {
 			return getPlayer1();
 		}
@@ -40,7 +39,6 @@ public class TicTacToe {
 	} 
 /*
 	public boolean isOver() {
-
 		return _board.isFull() || _board.isWinner();
 
 	}
@@ -123,7 +121,11 @@ public class TicTacToe {
 
 
 
-	// whatsup
+	/*
+	public boolean isOver() {
+
+	}
+	*/
 
 
 }	
