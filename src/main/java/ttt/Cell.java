@@ -22,6 +22,12 @@ public class Cell {
 		_isChecked = true;
 	}
 
+	public char getSign() {
+		return _sign;
+	}
+
+
+
 
 
 
