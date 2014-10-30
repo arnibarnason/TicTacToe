@@ -29,6 +29,7 @@ public class Board {
 			for (int j = 0; j < _maxColumns; j++) {
 				if (count == number) {
 					this._board[i][j].setSign(sign);
+					this._board[i][j].setChecked();
 					return;
 				}
 				count++;
