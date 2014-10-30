@@ -24,74 +24,76 @@ public class TicTacToeTest {
 		assertEquals("Player 2", ttt.switchPlayer().getName());
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	@Test
+	public void testGreeting() {
+		assertEquals("Hello World", ttt.greeting());
+	}
 
 	@Test
-	public void testIsOver(){
-		
+	public void testIsOver() {
+		assertEquals(false, ttt.isOver());
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
