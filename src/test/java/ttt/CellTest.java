@@ -35,5 +35,22 @@ public class CellTest {
 		assertEquals('X', cell.getSign());
 	}
 
+	@Test
+	public void getNumberTest() {
+		Cell cell = new Cell(5);
+		assertEquals(5, cell.getNumber());
+	}
 
+	@Test
+	public void getPartOfWinningLineTest() {
+		Cell cell = new Cell(0);
+		assertEquals(false, cell.getPartOfWinningLine());
+	}
+
+	@Test
+	public void setPartOfWinnigLineTest() {
+		Cell cell = new Cell(0);
+		cell.setPartOfWinningLine();
+		assertEquals(true, cell.getPartOfWinningLine());
+	}
 }

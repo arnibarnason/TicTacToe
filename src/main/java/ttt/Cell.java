@@ -6,7 +6,6 @@ public class Cell {
 	private int _number;
 	private boolean _partOfWinningLine;
 
-
 	public Cell(int number) {
 		_sign = ' ';
 		_isChecked = false;
@@ -30,11 +29,15 @@ public class Cell {
 		_sign = sign;
 	}
 
+	public int getNumber() {
+		return _number;
+	}
 
+	public boolean getPartOfWinningLine() {
+		return _partOfWinningLine;
+	}
 
-
-
-
-	
-
+	public void setPartOfWinningLine() {
+		_partOfWinningLine = true;
+	}
 }
