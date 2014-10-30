@@ -13,6 +13,10 @@ public class TicTacToe {
 		_round = 0;
 	}	
 
+	public String greeting() {
+		return "Hello World";
+	}
+
 	public void increaseRound() {
 		_round++;
 	}
@@ -37,12 +41,13 @@ public class TicTacToe {
 			return getPlayer2();
 		}
 	} 
-/*
+
+
 	public boolean isOver() {
 		return _board.isFull() || _board.isWinner();
 
 	}
-*/
+
 
 
 

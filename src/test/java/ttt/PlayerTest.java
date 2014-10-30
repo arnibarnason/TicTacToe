@@ -27,7 +27,7 @@ public class PlayerTest {
 		p.setName("Magnus");
 		assertEquals("Magnus", p.getName());
 	}
-
+	
 	@Test
 	public void testGetScore() {
 		assertEquals(0, p.getScore());

@@ -78,7 +78,6 @@ public class Board {
 		return true;
 	}
 
-
 	public boolean isWinner() {
 		return isWinnerHorizontalCheck() || isWinnerVerticalCheck() || isWinnerDiagonalCheck();
 	}
