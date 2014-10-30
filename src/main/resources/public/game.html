@@ -28,6 +28,7 @@
                     <td height="50" width="50" align="center"></td>
                 </tr>
             </table>
+            <div id='score'></div>
         </div>
 
         <script type="text/javascript">
@@ -39,7 +40,12 @@
                         url: "/mark",
                         data: "cellid=" + number
                     }).done(function(result) {
-                        this.html("x");
+                        if (result === "X" || result === "O") {
+                            this.html("x");
+                        } else {
+                            $("#score").html("cool");
+                        };
+                        
                     });
                 });
             });  
