@@ -11,9 +11,9 @@
     		<h1>Tic Tac Toe</h1>
     	</div>
         <div class='container'>
-            <table border="1">
+            <table border="1" id="ttt">
                 <tr>
-                    <td height="50" width="50" align="center"></td>
+                    <td height="50" width="50" align="center" value=1></td>
                     <td height="50" width="50" align="center"></td>
                     <td height="50" width="50" align="center"></td>
                 </tr>
@@ -32,7 +32,16 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
-                
+                $("#ttt").on("click", "td", function() {
+                    var number = $(this).val();
+                    $.ajax({
+                        type: "POST",
+                        url: "/mark",
+                        data: "cellid=" + number
+                    }).done(function(result) {
+                        this.html("x");
+                    });
+                });
             });  
         </script>
 
