@@ -46,11 +46,26 @@ public class BoardTest {
 
 
         @Test
-        public void isFull() {
+        public void isFullTest() {
             Board board = new Board();
             board.markCell(1, 'X');
             board.markCell(4, 'O');
             assertEquals(false, board.isFull());
+        }
+
+        @Test
+        public void isFullTest2() {
+            Board board = new Board();
+            board.markCell(0, 'X');
+            board.markCell(1, 'X');
+            board.markCell(2, 'O');
+            board.markCell(3, 'X');
+            board.markCell(4, 'X');
+            board.markCell(5, 'X');
+            board.markCell(6, 'O');
+            board.markCell(7, 'X');
+            board.markCell(8, 'X');
+            assertEquals(true, board.isFull());
         }
 
         @Test
