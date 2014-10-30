@@ -1,4 +1,4 @@
-package com.example.tests;
+package ttt.TicTacToe;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +18,11 @@ public class TestIndexPageImageAndTitle {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "https://localhost/";
+    port = System.getenv("PORT");
+        if(port == null) {
+            port = "4567";
+        }
+    baseUrl = "http://localhost:" + port;
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
