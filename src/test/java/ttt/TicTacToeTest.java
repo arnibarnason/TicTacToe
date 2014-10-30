@@ -16,7 +16,7 @@ public class TicTacToeTest {
 	public void testGetPlayer() {
 		assertEquals("Player 1", ttt.getPlayer1().getName());
 	}
-
+	//Magnús og Sindri vinna hér
 
 
 
