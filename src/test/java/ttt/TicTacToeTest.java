@@ -23,7 +23,6 @@ public class TicTacToeTest {
 		ttt.increaseRound();
 		assertEquals("Player 2", ttt.switchPlayer().getName());
 	}
-	//Magnús og Sindri vinna hér
 
 
 
