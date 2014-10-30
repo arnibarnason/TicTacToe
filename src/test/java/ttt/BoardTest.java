@@ -41,9 +41,14 @@ public class BoardTest {
 
 
 
-
-
-
+        @Test
+        public void displayBoardTest() {
+            Board board = new Board();
+            board.markCell(0, 'X');
+            board.markCell(3, 'O');
+            board.markCell(5, 'X');
+            assertEquals("X |   |  \nO |   | X\n  |   |  \n", board.displayBoard());
+        }
 
         @Test
         public void isFullTest() {
