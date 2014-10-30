@@ -4,9 +4,9 @@ notifications:
     - nonni95@gmail.com
     - maggisig92@gmail.com
     - hilmarragnars@gmail.com
-    - magnussig13@ru.is
 jdk:
     - openjdk7
     - oraclejdk7
 script:
     - ./gradlew check
+    - ./gradlew seleniumXvfb
