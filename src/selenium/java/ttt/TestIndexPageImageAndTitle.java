@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 public class TestIndexPageImageAndTitle {
   private WebDriver driver;
   private String baseUrl;
+  static String port;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
