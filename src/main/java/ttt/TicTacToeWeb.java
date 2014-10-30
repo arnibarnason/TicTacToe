@@ -4,6 +4,7 @@ package ttt;
 import spark.*;
 import static spark.Spark.*;
 import spark.servlet.SparkApplication;
+import ttt.TicTacToe;
 
 public class TicTacToeWeb implements SparkApplication {
 	public static void main(String[] args) {
@@ -17,10 +18,24 @@ public class TicTacToeWeb implements SparkApplication {
 	}
 
 	public void init() {
+
+		final TicTacToe game = new TicTacToe();
+
 		post(new Route("/game"){
             @Override
             public Object handle(Request request, Response response){
-                return "Hello World!";
+                return game.greeting();
+            }
+        });
+
+        post(new Route("/mark"){
+            @Override
+            public Object handle(Request request, Response response){
+                Integer cell = Integer.valueOf(request.queryParams("cellid"));
+
+                // TODO: Game logic needed
+                
+                return null;
             }
         });
 	}
