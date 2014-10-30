@@ -34,18 +34,14 @@ public class BoardTest {
         	board.markCell(9, 'X');
         }
 
+        @Test
+        public void testThatSignIsEitherXorO () {
+            Board board = new Board();
+            thrown.expect(IllegalArgumentException.class);
+            thrown.expectMessage(equalTo("Sign must be either X or O"));
 
-
-
-
-
-
-
-
-
-
-
-
+            board.markCell(5, 'Z');
+        }
 
         @Test
         public void displayBoardTest() {

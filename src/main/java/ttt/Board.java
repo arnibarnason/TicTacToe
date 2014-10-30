@@ -29,39 +29,24 @@ public class Board {
 			String exceptionMessage = "Number must be from 0 to 8";
 			throw new IllegalArgumentException(exceptionMessage);
 		}
-		for (int i = 0; i < _maxRows; i++) {
-			for (int j = 0; j < _maxColumns; j++) {
-				if (count == number) {
-						this._board[i][j].setSign(sign);
-						this._board[i][j].setChecked();
-						return;
+		else if (!(sign == 'X' || sign == 'O')) {
+			String exceptionMessage = "Sign must be either X or O";
+			throw new IllegalArgumentException(exceptionMessage);
+		}
+		else{
+			for (int i = 0; i < _maxRows; i++) {
+				for (int j = 0; j < _maxColumns; j++) {
+					if (count == number) {
+							this._board[i][j].setSign(sign);
+							this._board[i][j].setChecked();
+							return;
+					}
+					count++;
 				}
-				count++;
 			}
 		}	
 		return;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	public String displayBoard() {
 		String board = "";
@@ -74,7 +59,6 @@ public class Board {
 		}
 		return board;
 	}
-
 
 	public boolean isFull() {
 		for(int i = 0; i < _maxRows; i++) {
