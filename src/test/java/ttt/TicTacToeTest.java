@@ -17,7 +17,12 @@ public class TicTacToeTest {
 		assertEquals("Player 1", ttt.getPlayer1().getName());
 	}
 	//Magnús og Sindri vinna hér
-
+	@Test
+	public void testSwitchPlayer() {
+		assertEquals("Player 1", ttt.switchPlayer().getName());
+		ttt.increaseRound();
+		assertEquals("Player 2", ttt.switchPlayer().getName());
+	}
 
 
 

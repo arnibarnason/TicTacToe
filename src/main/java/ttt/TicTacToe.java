@@ -29,7 +29,15 @@ public class TicTacToe {
 		return _player2;
 	}
 
-
+	public Player switchPlayer(){
+	
+		if(_round % 2 == 0) {
+			return getPlayer1();
+		}
+		else {
+			return getPlayer2();
+		}
+	} 
 
 
 
