@@ -56,7 +56,7 @@ public class BoardTest {
         }
 
         @Test
-        public void isWinnerTest2() {
+        public void isWinnerTestHorizontal() {
             Board board = new Board();
             board.markCell(0, 'X');
             board.markCell(1, 'X');
@@ -64,6 +64,16 @@ public class BoardTest {
             assertEquals(true, board.isWinner());
         }
 
+        @Test
+        public void isWinnerTestVertical() {
+            Board board = new Board();
+            board.markCell(0, 'O');
+            board.markCell(3, 'O');
+            board.markCell(6, 'O');
+            assertEquals(true, board.isWinner());
+        }
+
+        
 
 
 
