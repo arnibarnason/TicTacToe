@@ -22,5 +22,18 @@ public class CellTest {
 		assertEquals(true, cell.isChecked());
 	}
 
+	@Test
+	public void getSignTest() {
+		Cell cell = new Cell(0);
+		assertEquals(' ', cell.getSign());
+	}
+
+	@Test
+	public void setSignTest() {
+		Cell cell = new Cell(0);
+		cell.setSign('X');
+		assertEquals('X', cell.getSign());
+	}
+
 
 }

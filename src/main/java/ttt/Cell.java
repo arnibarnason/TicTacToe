@@ -22,6 +22,16 @@ public class Cell {
 		_isChecked = true;
 	}
 
+	public char getSign() {
+		return _sign;
+	}
+
+	public void setSign(char sign) {
+		_sign = sign;
+	}
+
+
+
 
 
 
