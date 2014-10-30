@@ -19,7 +19,7 @@ public class TicTacToeWeb implements SparkApplication {
 
 	public void init() {
 
-		final TicTacToe game = new TicTacToe();
+		TicTacToe game = new TicTacToe();
 
         post(new Route("/id"){
             @Override
@@ -27,6 +27,7 @@ public class TicTacToeWeb implements SparkApplication {
                 Integer cell = Integer.valueOf(request.queryParams("id"));
 
                 if(game.isOver()) {
+                    game = new TicTacToe();
                 	return game.scoreMessage();
                 } else {
                 	return game.playCell(cell);
