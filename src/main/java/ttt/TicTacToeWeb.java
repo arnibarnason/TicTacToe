@@ -4,6 +4,7 @@ package ttt;
 import spark.*;
 import static spark.Spark.*;
 import spark.servlet.SparkApplication;
+import ttt.TicTacToe;
 
 public class TicTacToeWeb implements SparkApplication {
 	public static void main(String[] args) {
@@ -18,6 +19,8 @@ public class TicTacToeWeb implements SparkApplication {
 
 	public void init() {
 		post(new Route("/game"){
+			final TicTacToe game = new TicTacToe();
+
             @Override
             public Object handle(Request request, Response response){
                 return "Hello World!";
