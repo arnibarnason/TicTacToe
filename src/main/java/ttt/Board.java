@@ -17,4 +17,55 @@ public class Board {
 			}
 		}
 	}
+
+	public Cell[][] getBoard() {
+		return _board;
+	}
+
+	public void markCell(int number, char sign) {
+		int count = 0;
+
+		for (int i = 0; i < _maxRows; i++) {
+			for (int j = 0; j < _maxColumns; j++) {
+				if (count == number) {
+					this._board[i][j].setSign(sign);
+					return;
+				}
+				count++;
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
