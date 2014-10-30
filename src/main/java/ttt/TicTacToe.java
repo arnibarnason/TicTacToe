@@ -56,10 +56,11 @@ public class TicTacToe {
 
 	}
 
-	public void playCell(int number) {
+	public String playCell(int number) {
 		Player currPlayer = switchPlayer();
 		_board.markCell(number, currPlayer.getSign());
 		increaseRound();
+		return Character.toString(currPlayer.getSign());
 	}
 	
 	/*
