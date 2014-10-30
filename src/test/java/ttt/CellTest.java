@@ -15,5 +15,12 @@ public class CellTest {
 		assertEquals(false, cell.isChecked());
 	}
 
+	@Test
+	public void setCheckedTest() {
+		Cell cell = new Cell(0);
+		cell.setChecked();
+		assertEquals(true, cell.isChecked());
+	}
+
 
 }
