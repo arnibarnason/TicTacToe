@@ -13,19 +13,19 @@
         <div class='container'>
             <table border="1" id="ttt">
                 <tr>
+                    <td height="50" width="50" align="center" value=0></td>
                     <td height="50" width="50" align="center" value=1></td>
-                    <td height="50" width="50" align="center"></td>
-                    <td height="50" width="50" align="center"></td>
+                    <td height="50" width="50" align="center" value=2></td>
                 </tr>
                 <tr>
-                    <td height="50" width="50" align="center"></td>
-                    <td height="50" width="50" align="center"></td>
-                    <td height="50" width="50" align="center"></td>
+                    <td height="50" width="50" align="center" value=3></td>
+                    <td height="50" width="50" align="center" value=4></td>
+                    <td height="50" width="50" align="center" value=5></td>
                 </tr>
                 <tr>
-                    <td height="50" width="50" align="center"></td>
-                    <td height="50" width="50" align="center"></td>
-                    <td height="50" width="50" align="center"></td>
+                    <td height="50" width="50" align="center" value=6></td>
+                    <td height="50" width="50" align="center" value=7></td>
+                    <td height="50" width="50" align="center" value=8></td>
                 </tr>
             </table>
             <div id='score'></div>
@@ -36,9 +36,9 @@
                 $("#ttt").on("click", "td", function() {
                     var number = $(this).val();
                     $.ajax({
-                        type: "POST",
-                        url: "/mark",
-                        data: "cellid=" + number
+                        type: "post",
+                        url: "/id",
+                        data: "id=" + number
                     }).done(function(result) {
                         if (result === "X" || result === "O") {
                             this.html("x");

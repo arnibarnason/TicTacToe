@@ -21,10 +21,10 @@ public class TicTacToeWeb implements SparkApplication {
 
 		final TicTacToe game = new TicTacToe();
 
-        post(new Route("/mark"){
+        post(new Route("/id"){
             @Override
             public Object handle(Request request, Response response){
-                Integer cell = Integer.valueOf(request.queryParams("cellid"));
+                Integer cell = Integer.valueOf(request.queryParams("id"));
 
                 if(game.isOver()) {
                 	return game.scoreMessage();
