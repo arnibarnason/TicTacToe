@@ -16,6 +16,11 @@ public class TicTacToe {
 		_ties = 0;
 	}	
 
+	public void Reset() {
+		_board = new Board();
+		_round = 0;
+	}
+
 	public String scoreMessage() {
 		return "Player 1: " + _player1.getScore() 
 		+ " : Player 2: " + _player2.getScore();
@@ -52,6 +57,10 @@ public class TicTacToe {
 	} 
 
 	public boolean isOver() {
+		if(_board.isWinner()) {
+			_round--;
+			switchPlayer().increaseScore();
+		}
 		return _board.isFull() || _board.isWinner();
 
 	}

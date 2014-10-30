@@ -34,7 +34,12 @@ public class TicTacToeTest {
 		assertEquals(false, ttt.isOver());
 	}
 
-
+	@Test
+	public void testReset(){
+		ttt.increaseRound();
+		ttt.Reset();
+		assertEquals(0, ttt.getRound());
+	}
 
 
 
