@@ -35,5 +35,11 @@ public class CellTest {
 		assertEquals('X', cell.getSign());
 	}
 
+	@Test
+	public void getNumberTest() {
+		Cell cell = new Cell(5);
+		assertEquals(5, cell.getNumber());
+	}
+
 
 }

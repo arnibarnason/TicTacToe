@@ -30,6 +30,10 @@ public class Cell {
 		_sign = sign;
 	}
 
+	public int getNumber() {
+		return _number;
+	}
+
 
 
 
