@@ -26,6 +26,10 @@ public class Cell {
 		return _sign;
 	}
 
+	public void setSign(char sign) {
+		_sign = sign;
+	}
+
 
 
 
