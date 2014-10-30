@@ -60,8 +60,15 @@ public class TicTacToe {
 		if(_board.isWinner()) {
 			_round--;
 			switchPlayer().increaseScore();
+			Reset();
+			return true;
+		} else if(_board.isFull()) {
+			Reset();
+			increaseTies();
+			return true;
+		} else {
+			return false;
 		}
-		return _board.isFull() || _board.isWinner();
 
 	}
 
