@@ -29,8 +29,7 @@ public class TicTacToeWeb implements SparkApplication {
                 if(game.isOver()) {
                 	return game.scoreMessage();
                 } else {
-                	game.playCell(cell);
-                	return null;
+                	return game.playCell(cell);
                 }
             }
         });
