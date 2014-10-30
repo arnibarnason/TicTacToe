@@ -45,9 +45,13 @@ public class BoardTest {
 
 
 
-
-
-
+        @Test
+        public void isFull() {
+            Board board = new Board();
+            board.markCell(1, 'X');
+            board.markCell(4, 'O');
+            assertEquals(false, board.isFull());
+        }
 
         @Test
         public void isWinnerTest() {

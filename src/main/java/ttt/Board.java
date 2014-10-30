@@ -62,7 +62,16 @@ public class Board {
 
 
 
-
+	public boolean isFull() {
+		for(int i = 0; i < _maxRows; i++) {
+			for(int j = 0; j < _maxColumns; j++) {
+				if(!_board[i][j].isChecked()) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 
 
 	public boolean isWinner() {
