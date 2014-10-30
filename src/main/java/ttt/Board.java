@@ -60,7 +60,6 @@ public class Board {
 		return board;
 	}
 
-
 	public boolean isFull() {
 		for(int i = 0; i < _maxRows; i++) {
 			for(int j = 0; j < _maxColumns; j++) {
