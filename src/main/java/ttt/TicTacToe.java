@@ -55,7 +55,14 @@ public class TicTacToe {
 
 	}
 
-	public void play(int number) {
+	public void playCell(int number) {
+		Player currPlayer = switchPlayer();
+		_board.markCell(number, currPlayer.getSign());
+		increaseRound();
+	}
+	
+	/*
+	public void play() {
 
 		Player currPlayer = _player1;
 
@@ -78,6 +85,7 @@ public class TicTacToe {
 			increaseTies();
 		}
 	}
+	*/
 
 
 
