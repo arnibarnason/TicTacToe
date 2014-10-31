@@ -56,6 +56,21 @@ public class TicTacToeTest {
 	}
 
 	@Test
+	public void testIsOver2() {
+		TicTacToe ttt = new TicTacToe();
+		ttt.playCell(0);
+		ttt.playCell(1);
+		ttt.playCell(2);
+		ttt.playCell(3);
+		ttt.playCell(4);
+		ttt.playCell(5);
+		ttt.playCell(7);
+		ttt.playCell(6);
+		ttt.playCell(8);
+		assertEquals(true, ttt.isOver());
+	}
+
+	@Test
 	public void testReset(){
 		TicTacToe ttt = new TicTacToe();
 		ttt.increaseRound();
