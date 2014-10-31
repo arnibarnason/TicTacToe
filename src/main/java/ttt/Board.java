@@ -22,7 +22,7 @@ public class Board {
 		return _board;
 	}
 
-	public void markCell(int number, char sign) {
+	public boolean markCell(int number, char sign) {
 		int count = 0;
 
 		if(number < 0 || number > 8) {
@@ -37,15 +37,20 @@ public class Board {
 			for (int i = 0; i < _maxRows; i++) {
 				for (int j = 0; j < _maxColumns; j++) {
 					if (count == number) {
+						if(!this._board[i][j].isChecked()){
 							this._board[i][j].setSign(sign);
 							this._board[i][j].setChecked();
-							return;
+							return true;
+						} else {
+							return false;
+						}
+							
 					}
 					count++;
 				}
 			}
 		}	
-		return;
+		return false;
 	}
 
 	public String displayBoard() {
