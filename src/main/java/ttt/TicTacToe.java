@@ -30,10 +30,6 @@ public class TicTacToe {
 		_round++;
 	}
 
-	public void increaseTies() {
-		_ties++;
-	}
-
 	public int getRound() {
 		return _round;
 	}	
@@ -64,7 +60,6 @@ public class TicTacToe {
 			return true;
 		} else if(_board.isFull()) {
 			Reset();
-			increaseTies();
 			return true;
 		} else {
 			return false;
