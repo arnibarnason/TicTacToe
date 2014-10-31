@@ -33,23 +33,31 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
+                for (var i = 0; i < 9; i++) {
+                    $("#" + i).html("");
+                };
+
+
                 $("#ttt").on("click", "td", function( event ) {
                     var number = $(this).attr('id');
-                    $.ajax({
-                        type: "post",
-                        url: "/id",
-                        data: "id=" + number
-                    }).done(function(result) {
-                        if (result === "X" || result === "O") {
-                            $("#"+number).html(result);
-                        } else {
-                            $("#score").html(result);
-                            for (var i = 0; i < 9; i++) {
-                                $("#" + i).html("");
+                    if ($(this).html() === "") {
+                        $.ajax({
+                            type: "post",
+                            url: "/id",
+                            data: "id=" + number
+                        }).done(function(result) {
+                            if (result === "X" || result === "O") {
+                                $("#"+number).html(result);
+                            } else {
+                                $("#score").html(result);
+                                for (var i = 0; i < 9; i++) {
+                                    $("#" + i).html("");
+                                };
                             };
-                        };
-                        
-                    });
+                            
+                        });
+                    };
+                    
                 });
             });  
         </script>
