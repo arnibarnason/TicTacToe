@@ -25,8 +25,20 @@ public class TicTacToeTest {
 	}
 
 	@Test
-	public void scoreMessage() {
+	public void scoreMessageTest() {
+		TicTacToe ttt = new TicTacToe();
 		assertEquals("Player 1: 0 : Player 2: 0", ttt.scoreMessage());
+	}
+
+	@Test
+	public void scoreMessageTest2() {
+		TicTacToe ttt = new TicTacToe();
+		ttt.getPlayer1().increaseScore();
+		ttt.getPlayer1().increaseScore();
+		ttt.getPlayer2().increaseScore();
+		ttt.getPlayer2().increaseScore();
+		ttt.getPlayer2().increaseScore();
+		assertEquals("Player 1: 2 : Player 2: 3", ttt.scoreMessage());
 	}
 
 	@Test
