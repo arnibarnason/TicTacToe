@@ -56,6 +56,17 @@ public class TicTacToeTest {
 	}
 
 	@Test
+	public void testIsOverTrueAfterPlayerWins() {
+		TicTacToe ttt = new TicTacToe();
+		ttt.playCell(0);
+		ttt.playCell(3);
+		ttt.playCell(1);
+		ttt.playCell(4);
+		ttt.playCell(2);
+		assertEquals(true, ttt.isOver());
+	}
+
+	@Test
 	public void testIsOverTrueAfterAllCellsMarked() {
 		TicTacToe ttt = new TicTacToe();
 		ttt.playCell(0);
@@ -64,8 +75,8 @@ public class TicTacToeTest {
 		ttt.playCell(3);
 		ttt.playCell(4);
 		ttt.playCell(5);
-		ttt.playCell(7);
 		ttt.playCell(6);
+		ttt.playCell(7);
 		ttt.playCell(8);
 		assertEquals(true, ttt.isOver());
 	}
