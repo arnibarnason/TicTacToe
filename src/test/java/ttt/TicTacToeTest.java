@@ -13,9 +13,15 @@ public class TicTacToeTest {
 	}
 	
 	@Test
-	public void testGetPlayer() {
+	public void testGetPlayer1() {
 		TicTacToe ttt = new TicTacToe();
 		assertEquals("Player 1", ttt.getPlayer1().getName());
+	}
+
+	@Test
+	public void testGetPlayer2() {
+		TicTacToe ttt = new TicTacToe();
+		assertEquals("Player 2", ttt.getPlayer2().getName());
 	}
 	
 	@Test
