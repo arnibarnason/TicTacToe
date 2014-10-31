@@ -68,9 +68,8 @@ public class TicTacToe {
 	}
 
 	public String playCell(int number) {
-		 
-		 Player currPlayer = switchPlayer();
-		 boolean marked = _board.markCell(number, currPlayer.getSign());
+		Player currPlayer = switchPlayer();
+		boolean marked = _board.markCell(number, currPlayer.getSign());
 		if(marked) {
 			increaseRound();
 			return Character.toString(currPlayer.getSign());
