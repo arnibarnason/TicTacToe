@@ -57,7 +57,7 @@ public class Board {
 		String board = "";
 		for(int i = 0; i < _maxRows; i++) {
 			for(int j = 0; j < _maxColumns; j++) {
-				board = board + _board[i][j].getSign() + " | ";
+				board = board + this._board[i][j].getSign() + " | ";
 			}
 			board = board.substring(0, board.length() - 3);
 			board = board + "\n";
@@ -68,7 +68,7 @@ public class Board {
 	public boolean isFull() {
 		for(int i = 0; i < _maxRows; i++) {
 			for(int j = 0; j < _maxColumns; j++) {
-				if(!_board[i][j].isChecked()) {
+				if(!this._board[i][j].isChecked()) {
 					return false;
 				}
 			}
@@ -82,9 +82,9 @@ public class Board {
 
 	private boolean isWinnerHorizontalCheck() {
 		for(int i = 0; i < _maxRows; i++) {
-			if(_board[i][0].isChecked() && 
-				_board[i][0].getSign() == _board[i][1].getSign() &&
-				_board[i][1].getSign() == _board[i][2].getSign()) {
+			if(this._board[i][0].isChecked() && 
+				this._board[i][0].getSign() == this._board[i][1].getSign() &&
+				this._board[i][1].getSign() == this._board[i][2].getSign()) {
 				return true;
 			}
 		}
@@ -93,9 +93,9 @@ public class Board {
 
 	private boolean isWinnerVerticalCheck() {
 		for(int i = 0; i < _maxRows; i++) {
-			if(_board[0][i].isChecked() &&
-				_board[0][i].getSign() == _board[1][i].getSign() &&
-				_board[1][i].getSign() == _board[2][i].getSign()) {
+			if(this._board[0][i].isChecked() &&
+				this._board[0][i].getSign() == this._board[1][i].getSign() &&
+				this._board[1][i].getSign() == this._board[2][i].getSign()) {
 				return true;
 			}
 		}
@@ -103,14 +103,14 @@ public class Board {
 	}
 
 	private boolean isWinnerDiagonalCheck() {
-		if(_board[0][0].isChecked() &&
-			_board[0][0].getSign() == _board[1][1].getSign() &&
-			_board[1][1].getSign() == _board[2][2].getSign()) {
+		if(this._board[0][0].isChecked() &&
+			this._board[0][0].getSign() == this._board[1][1].getSign() &&
+			this._board[1][1].getSign() == this._board[2][2].getSign()) {
 			return true;
 		}
 		if(_board[2][0].isChecked() &&
-			_board[2][0].getSign() == _board[1][1].getSign() &&
-			_board[1][1].getSign() == _board[0][2].getSign()) {
+			this._board[2][0].getSign() == this._board[1][1].getSign() &&
+			this._board[1][1].getSign() == this._board[0][2].getSign()) {
 			return true;
 		}
 		return false;
