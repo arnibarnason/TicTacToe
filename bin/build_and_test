@@ -2,4 +2,3 @@
 
 ./gradlew check
 ./gradlew test jacocoTestReport
-./gradlew seleniumXvfb
