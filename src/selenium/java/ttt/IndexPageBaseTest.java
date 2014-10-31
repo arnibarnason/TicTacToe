@@ -25,11 +25,7 @@ public class IndexPageBaseTest {
     public static void before() {
         // Will be run before all tests in class are run
         driver = new FirefoxDriver();
-        port = System.getenv("PORT");
-        if(port == null) {
-            port = "4567";
-        }
-        baseUrl = "http://localhost:" + port;
+        baseUrl = "http://erkimoddarar.herokuapp.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
