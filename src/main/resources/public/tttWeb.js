@@ -1,15 +1,9 @@
 $(document).ready(function() {
     clearBoard();
+    newGame();
 
-    $('#newGame').on("click", function( event ) {
-        $.ajax({
-                type: "post",
-                url: "/newGame",
-            }).done(function(result) {
-                if(result) {
-                    clearBoard();
-                }
-            });
+    $('#newGame').on("click", function() {
+        newGame();
     });
 
     $("#ttt").on("click", "td", function( event ) {
@@ -28,10 +22,22 @@ $(document).ready(function() {
                 }
                 
             });
+            event.preventDefault();
         };
         
     });
 }); 
+
+function newGame() {
+    $.ajax({
+        type: "post",
+        url: "/newGame",
+    }).done(function(result) {
+        if(result) {
+            clearBoard();
+        }
+    });
+}
 
 function clearBoard() {
     for (var i = 0; i < 9; i++) {
