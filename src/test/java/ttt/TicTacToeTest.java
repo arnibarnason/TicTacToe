@@ -33,13 +33,13 @@ public class TicTacToeTest {
 	}
 
 	@Test
-	public void scoreMessageTest() {
+	public void testScoreMessageInBeginning() {
 		TicTacToe ttt = new TicTacToe();
 		assertEquals("Player 1: 0 : Player 2: 0", ttt.scoreMessage());
 	}
 
 	@Test
-	public void scoreMessageTest2() {
+	public void testScoreMessageAfterSeveralGames() {
 		TicTacToe ttt = new TicTacToe();
 		ttt.getPlayer1().increaseScore();
 		ttt.getPlayer1().increaseScore();
@@ -50,13 +50,13 @@ public class TicTacToeTest {
 	}
 
 	@Test
-	public void testIsOver() {
+	public void testIsOverFalseInBeginning() {
 		TicTacToe ttt = new TicTacToe();
 		assertEquals(false, ttt.isOver());
 	}
 
 	@Test
-	public void testIsOver2() {
+	public void testIsOverTrueAfterAllCellsMarked() {
 		TicTacToe ttt = new TicTacToe();
 		ttt.playCell(0);
 		ttt.playCell(1);
