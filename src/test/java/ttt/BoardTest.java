@@ -121,4 +121,20 @@ public class BoardTest {
             board.markCell(4, 'X');
             board.markCell(6, 'X');
         }
+
+        @Test 
+        public void testGetCellSign() {
+            Board board = new Board();
+            board.markCell(3, 'O');
+            assertEquals('O', board.getCellSign(3));
+
+        }
+
+        @Test 
+        public void testIsMarked() {
+            Board board = new Board();
+            board.markCell(3, 'O');
+            assertEquals(false, board.markCell(3, 'X'));
+
+        }
 }
