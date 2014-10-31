@@ -14,24 +14,30 @@ public class TicTacToeWeb implements SparkApplication {
 		if (port != null) {
             setPort(Integer.valueOf(port));
         } 
+        
+
         tttWeb.init();
 	}
 
-	public void init() {
+    private TicTacToe game;
 
-		final TicTacToe game = new TicTacToe();
+    public void init() {
+        
+        if (game == null) {
+            game = new TicTacToe();
+        }
 
-        post(new Route("/id"){
+        post(new Route("/id") {
             @Override
             public Object handle(Request request, Response response){
                 Integer cell = Integer.valueOf(request.queryParams("id"));
 
                 if(game.isOver()) {
-                	return game.scoreMessage();
+                    return game.scoreMessage();
                 } else {
-                	return game.playCell(cell);
+                    return game.playCell(cell);
                 }
             }
         });
-	}
+    }    
 }
