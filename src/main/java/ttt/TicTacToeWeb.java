@@ -39,12 +39,7 @@ public class TicTacToeWeb implements SparkApplication {
             @Override
             public Object handle(Request request, Response response) {
                 Integer cell = Integer.valueOf(request.queryParams("id"));
-
-                if(game.isOver()) {
-                    return game.scoreMessage();
-                } else {
-                    return game.playCell(cell);
-                }
+                return game.playCell(cell);
             }
         });
     }    
