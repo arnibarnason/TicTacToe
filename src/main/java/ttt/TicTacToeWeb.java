@@ -1,4 +1,3 @@
-
 package ttt;
 
 import spark.*;
