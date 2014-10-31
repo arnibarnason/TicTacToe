@@ -71,18 +71,12 @@ public class TicTacToe {
 		 
 		 Player currPlayer = switchPlayer();
 		 boolean marked = _board.markCell(number, currPlayer.getSign());
-		 char sign = currPlayer.getSign();
 		if(marked) {
 			increaseRound();
-			return Character.toString(sign);
+			return Character.toString(currPlayer.getSign());
 		}
 		else {
-			if(sign == 'X') {
-				return Character.toString('O');
-			} else {
-				return Character.toString('X');
-			}
-			
+			return Character.toString(_board.getCellSign(number));			
 		}
 		
 	}

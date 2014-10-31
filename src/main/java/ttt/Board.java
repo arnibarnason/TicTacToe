@@ -115,5 +115,21 @@ public class Board {
 		}
 		return false;
 	}
+
+
+	public char getCellSign(int number) {
+		int count = 0;
+		for (int i = 0; i < _maxRows; i++) {
+				for (int j = 0; j < _maxColumns; j++) {
+					if (count == number) {
+						return this._board[i][j].getSign();							
+					}
+					count++;
+				}
+			}
+		return ' ';
+	}
+
+
 }
 
