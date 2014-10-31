@@ -8,7 +8,7 @@ jdk:
 - openjdk7
 - oraclejdk7
 script:
-- ./gradlew check
+- ./bin/build_and_test
 after_success:
   deploy:
     provider: heroku
