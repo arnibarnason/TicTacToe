@@ -25,7 +25,7 @@ public class IndexPageBaseTest {
     public static void before() {
         // Will be run before all tests in class are run
         driver = new FirefoxDriver();
-        baseUrl = "http://erkimoddarar.herokuapp.com/";
+        baseUrl = "http://erkimoddarar.herokuapp.com";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
@@ -42,7 +42,7 @@ public class IndexPageBaseTest {
     }
 
     @Test
-    public void assertTitle() {
+    public void assertTitleGame() {
         driver.get(baseUrl + "/game.html");
         assertEquals("Erkimoddarar", driver.getTitle());
     }
