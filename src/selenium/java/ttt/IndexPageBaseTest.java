@@ -44,7 +44,7 @@ public class IndexPageBaseTest {
     @Test
     public void assertTitleGame() {
         driver.get(baseUrl + "/game.html");
-        assertEquals("Erkimoddarar - Game", driver.getTitle());
+        assertEquals("Erkimoddarar - game", driver.getTitle());
     }
 
 
