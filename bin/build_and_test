@@ -1,4 +1,0 @@
-#!/bin/bash
-
-./gradlew check
-./gradlew test jacocoTestReport

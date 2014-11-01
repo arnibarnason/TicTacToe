@@ -9,7 +9,7 @@ jdk:
 - oraclejdk7
 
 install: 
-  - ./bin/build_and_test
+  - ./gradlew check
 deploy:
     provider: heroku
     api_key:
