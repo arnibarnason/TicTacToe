@@ -123,7 +123,6 @@ pmd {
         'java-optimizations',
         'java-strictexception',
         'java-strings',
-        'java-sunsecure',
         'java-typeresolution',
         'java-unnecessary',
         'java-unusedcode'

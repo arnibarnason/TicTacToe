@@ -38,13 +38,13 @@ public class IndexPageBaseTest {
     @Test
     public void assertTitle() {
         driver.get(baseUrl + "/");
-        assertEquals("Erkimoddarar", driver.getTitle());
+        assertEquals("The title was not Erkimoddarar", "Erkimoddarar", driver.getTitle());
     }
 
     @Test
     public void assertTitleGame() {
         driver.get(baseUrl + "/game.html");
-        assertEquals("Erkimoddarar - Game", driver.getTitle());
+        assertEquals("The title was not Erkimoddarar - Game", "Erkimoddarar - Game", driver.getTitle());
     }
 
 
