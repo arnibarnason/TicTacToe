@@ -6,14 +6,12 @@ public class TicTacToe {
 	private Player _player1;
 	private Player _player2;
 	private int _round;
-	private int _ties;
 	
 	public TicTacToe() {
 		_board = new Board();
 		_player1 = new Player("Player 1", 'X');		
 		_player2 = new Player("Player 2", 'O');
 		_round = 0;
-		_ties = 0;
 	}	
 
 	public void Reset() {
