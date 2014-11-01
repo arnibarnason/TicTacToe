@@ -42,7 +42,14 @@ public class TicTacToeTest {
 	@Test
 	public void testScoreMessageInBeginning() {
 		final TicTacToe ttt = new TicTacToe();
-		assertEquals("The score message did not return the right message.", "Player 1: 0 : Player 2: 0", ttt.scoreMessage());
+		assertEquals("The score message did not return the right message.", "Player 1: 0 | Player 2: 0 | Ties: 0", ttt.scoreMessage());
+	}
+
+	@Test
+	public void testIncreaseTies() {
+		final TicTacToe ttt = new TicTacToe();
+		ttt.increaseTies();
+		assertEquals("Did not return right number of ties", 1, ttt.getTies());
 	}
 
 	@Test
@@ -51,9 +58,10 @@ public class TicTacToeTest {
 		ttt.getPlayer1().increaseScore();
 		ttt.getPlayer1().increaseScore();
 		ttt.getPlayer2().increaseScore();
+		ttt.increaseTies();
 		ttt.getPlayer2().increaseScore();
 		ttt.getPlayer2().increaseScore();
-		assertEquals("The score message did not return the right message.", "Player 1: 2 : Player 2: 3", ttt.scoreMessage());
+		assertEquals("The score message did not return the right message.", "Player 1: 2 | Player 2: 3 | Ties: 1", ttt.scoreMessage());
 	}
 
 	@Test

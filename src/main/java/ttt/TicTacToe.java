@@ -5,12 +5,14 @@ public class TicTacToe {
 	private Player _player1;
 	private Player _player2;
 	private int _round;
+	private int _ties;
 	
 	public TicTacToe() {
 		_board = new Board();
 		_player1 = new Player("Player 1", 'X');		
 		_player2 = new Player("Player 2", 'O');
 		_round = 0;
+		_ties = 0;
 	}	
 
 	public void Reset() {
@@ -20,7 +22,8 @@ public class TicTacToe {
 
 	public String scoreMessage() {
 		return "Player 1: " + _player1.getScore() 
-		+ " : Player 2: " + _player2.getScore();
+		+ " | Player 2: " + _player2.getScore()
+		+ " | Ties: " + getTies();
 	}
 
 	public void increaseRound() {
@@ -29,6 +32,14 @@ public class TicTacToe {
 
 	public int getRound() {
 		return _round;
+	}
+
+	public void increaseTies() {
+		_ties++;
+	}
+
+	public int getTies() {
+		return _ties;
 	}	
 	
 	public Player getPlayer1() {
@@ -57,6 +68,7 @@ public class TicTacToe {
 			return true;
 		} else if(_board.isFull()) {
 			Reset();
+			increaseTies();
 			return true;
 		} else {
 			return false;
