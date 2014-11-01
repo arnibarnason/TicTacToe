@@ -1,6 +1,8 @@
 package ttt;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
@@ -70,7 +72,7 @@ public class BoardTest {
             final Board board = new Board();
             board.markCell(1, 'X');
             board.markCell(4, 'O');
-            assertEquals(false, board.isFull());
+            assertFalse(board.isFull());
         }
 
         @Test
@@ -85,13 +87,13 @@ public class BoardTest {
             board.markCell(6, 'O');
             board.markCell(7, 'X');
             board.markCell(8, 'X');
-            assertEquals(true, board.isFull());
+            assertTrue(board.isFull());
         }
 
         @Test
         public void isWinnerTest() {
             final Board board = new Board();
-            assertEquals(false, board.isWinner());
+            assertFalse(board.isWinner());
         }
 
         @Test
@@ -100,7 +102,7 @@ public class BoardTest {
             board.markCell(0, 'X');
             board.markCell(1, 'X');
             board.markCell(2, 'X');
-            assertEquals(true, board.isWinner());
+            assertTrue(board.isWinner());
         }
 
         @Test
@@ -109,7 +111,7 @@ public class BoardTest {
             board.markCell(0, 'O');
             board.markCell(3, 'O');
             board.markCell(6, 'O');
-            assertEquals(true, board.isWinner());
+            assertTrue(board.isWinner());
         }
 
         @Test
@@ -125,14 +127,12 @@ public class BoardTest {
             final Board board = new Board();
             board.markCell(3, 'O');
             assertEquals('O', board.getCellSign(3));
-
         }
 
         @Test 
         public void testIsMarked() {
             final Board board = new Board();
             board.markCell(3, 'O');
-            assertEquals(false, board.markCell(3, 'X'));
-
+            assertFalse(board.markCell(3, 'X'));
         }
 }
