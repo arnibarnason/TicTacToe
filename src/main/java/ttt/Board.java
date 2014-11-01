@@ -37,12 +37,12 @@ public class Board {
 			for (int i = 0; i < _maxRows; i++) {
 				for (int j = 0; j < _maxColumns; j++) {
 					if (count == number) {
-						if(!this._board[i][j].isChecked()){
+						if(this._board[i][j].isChecked()){
+							return false;
+						} else {
 							this._board[i][j].setSign(sign);
 							this._board[i][j].setChecked();
 							return true;
-						} else {
-							return false;
 						}
 							
 					}
