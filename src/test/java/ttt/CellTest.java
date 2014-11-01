@@ -40,7 +40,7 @@ public class CellTest {
 		Cell cell = new Cell(5);
 		assertEquals(5, cell.getNumber());
 	}
-
+	/*
 	@Test
 	public void getPartOfWinningLineTest() {
 		Cell cell = new Cell(0);
@@ -53,4 +53,5 @@ public class CellTest {
 		cell.setPartOfWinningLine();
 		assertEquals(true, cell.getPartOfWinningLine());
 	}
+	*/
 }
