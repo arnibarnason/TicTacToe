@@ -38,7 +38,7 @@ public class IndexPageBaseTest {
     @Test
     public void assertTitle() {
         driver.get(baseUrl + "/");
-        assertEquals("The title was not Erkimoddarar", "Erkimoddararr", driver.getTitle());
+        assertEquals("The title was not Erkimoddarar", "Erkimoddarar", driver.getTitle());
     }
     /*
     @Test
