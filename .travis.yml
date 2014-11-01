@@ -8,13 +8,12 @@ jdk:
 - openjdk7
 - oraclejdk7
 
-install: 
-  - ./gradlew check
-before_script:
-  deploy:
-      provider: heroku
-      api_key:
-        secure: LpFXABZR/s87HjMosG3vwTYOLRXQTVztdcwYZz6lHcbLjwAXcRMbwSeeVCaqBy8u7Twihw9OKNtbQ+pi3GpEWsa61+WrOQazv0OzOeY4rE5xFtt7c4V+TA6T3B+WMdhvEVh9JHYoiY5ioX0edsj2zflJSDDN5jtVP4/1NaBDyVU=
-      app: erkimoddarar
+deploy:
+    provider: heroku
+    api_key:
+      secure: LpFXABZR/s87HjMosG3vwTYOLRXQTVztdcwYZz6lHcbLjwAXcRMbwSeeVCaqBy8u7Twihw9OKNtbQ+pi3GpEWsa61+WrOQazv0OzOeY4rE5xFtt7c4V+TA6T3B+WMdhvEVh9JHYoiY5ioX0edsj2zflJSDDN5jtVP4/1NaBDyVU=
+    app: erkimoddarar
+    on:
+      - ./gradlew check
 script: 
   - ./gradlew seleniumXvfb
