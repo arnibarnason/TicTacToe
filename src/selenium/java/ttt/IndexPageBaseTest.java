@@ -71,7 +71,7 @@ public class IndexPageBaseTest {
         assertEquals("The mark for player2 was not O", "O", driver.findElement(By.id("4")).getText());
     }
 
-    /*
+    /*    
     @Test
     public void assertThatBoardIsEmptyWhenPlayerWins() {
         driver.get(baseUrl + "/");
@@ -88,6 +88,7 @@ public class IndexPageBaseTest {
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("1")), "X"));
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("4")), "O"));
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("2")), "X"));
+        
         assertEquals("Cell with id 0 is empty cell", " ", driver.findElement(By.id("0")).getText());
         assertEquals("Cell with id 1 is empty cell", " ", driver.findElement(By.id("1")).getText());
         assertEquals("Cell with id 2 is empty cell", " ", driver.findElement(By.id("2")).getText());
