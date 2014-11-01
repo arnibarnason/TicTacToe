@@ -40,13 +40,14 @@ public class IndexPageBaseTest {
         driver.get(baseUrl + "/");
         assertEquals("The title was not Erkimoddarar", "Erkimoddarar", driver.getTitle());
     }
-
+    /*
     @Test
     public void assertTitleGame() {
         driver.get(baseUrl + "/");
         driver.findElement(By.id("play")).click();
         assertEquals("The title was not Erkimoddarar - Game", "Erkimoddarar - Game", driver.getTitle());
     }
+    */
 
 
 
