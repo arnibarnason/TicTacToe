@@ -30,7 +30,7 @@ public class TicTacToeWeb implements SparkApplication {
             @Override
             public Object handle(Request request, Response response) {
                 game = new TicTacToe();
-                return true;
+                return game.scoreMessage();
             }
         });
 

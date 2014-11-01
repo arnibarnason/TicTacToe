@@ -23,7 +23,7 @@ $(document).ready(function() {
                 if(result.substr(0, 1) == "W") {
                     $("#" + number).html(result.substr(1, 2));
                     $("#score").html(result.substr(2));
-                    alert("VICTORY!");
+                    //alert("VICTORY!");
                     clearBoard();
                 }
                 else {
@@ -44,9 +44,7 @@ function newGame() {
         type: "post",
         url: "/newGame",
     }).done(function(result) {
-        if(result) {
-            clearBoard();
-        }
+        $("#score").html(result);
     });
 }
 
