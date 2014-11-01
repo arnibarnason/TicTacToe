@@ -116,7 +116,6 @@ pmd {
         'java-finalizers',
         'java-imports',
         'java-j2ee',
-        'java-javabeans',
         'java-junit',
         'java-logging-jakarta-commons',
         'java-logging-java',
@@ -130,3 +129,5 @@ pmd {
         'java-unusedcode'
   ]
 }
+
+test.finalizedBy jacocoTestReport

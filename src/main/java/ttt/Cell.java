@@ -4,13 +4,13 @@ public class Cell {
 	private char _sign;
 	private boolean _isChecked;
 	private final int _number;
-	private boolean _partOfWinningLine;
+	//private boolean _partOfWinningLine;
 
 	public Cell(final int number) {
 		_sign = ' ';
 		_isChecked = false;
 		_number = number;
-		_partOfWinningLine = false;
+		//_partOfWinningLine = false;
 	}
 
 	public boolean isChecked() {

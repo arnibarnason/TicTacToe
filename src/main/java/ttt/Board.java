@@ -22,18 +22,14 @@ public class Board {
 		return _board;
 	}
 
-	public boolean markCell(int number, char sign) {
+	public boolean markCell(final int number,final char sign) {
 		int count = 0;
 
 		if(number < 0 || number > 8) {
-			String exceptionMessage = "Number must be from 0 to 8";
+			final String exceptionMessage = "Number must be from 0 to 8";
 			throw new IllegalArgumentException(exceptionMessage);
 		}
-		else if (!(sign == 'X' || sign == 'O')) {
-			String exceptionMessage = "Sign must be either X or O";
-			throw new IllegalArgumentException(exceptionMessage);
-		}
-		else{
+		else if (sign == 'X' || sign == 'O') {
 			for (int i = 0; i < _maxRows; i++) {
 				for (int j = 0; j < _maxColumns; j++) {
 					if (count == number) {
@@ -47,7 +43,11 @@ public class Board {
 					}
 					count++;
 				}
-			}
+			}			
+		}
+		else{
+			final String exceptionMessage = "Sign must be either X or O";
+			throw new IllegalArgumentException(exceptionMessage);
 		}	
 		return false;
 	}
@@ -116,7 +116,7 @@ public class Board {
 	}
 
 
-	public char getCellSign(int number) {
+	public char getCellSign(final int number) {
 		int count = 0;
 		for (int i = 0; i < _maxRows; i++) {
 				for (int j = 0; j < _maxColumns; j++) {
