@@ -8,9 +8,8 @@ jdk:
 - openjdk7
 - oraclejdk7
 
-before_deploy:
-  script: 
-    - ./bin/build_and_test
+script: 
+  - ./bin/build_and_test
 deploy:
     provider: heroku
     api_key:
