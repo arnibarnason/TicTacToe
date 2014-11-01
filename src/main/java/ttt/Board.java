@@ -29,11 +29,7 @@ public class Board {
 			String exceptionMessage = "Number must be from 0 to 8";
 			throw new IllegalArgumentException(exceptionMessage);
 		}
-		else if (!(sign == 'X' || sign == 'O')) {
-			String exceptionMessage = "Sign must be either X or O";
-			throw new IllegalArgumentException(exceptionMessage);
-		}
-		else{
+		else if (sign == 'X' || sign == 'O') {
 			for (int i = 0; i < _maxRows; i++) {
 				for (int j = 0; j < _maxColumns; j++) {
 					if (count == number) {
@@ -47,7 +43,11 @@ public class Board {
 					}
 					count++;
 				}
-			}
+			}			
+		}
+		else{
+			String exceptionMessage = "Sign must be either X or O";
+			throw new IllegalArgumentException(exceptionMessage);
 		}	
 		return false;
 	}
