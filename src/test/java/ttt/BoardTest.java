@@ -49,7 +49,7 @@ public class BoardTest {
             board.markCell(0, 'X');
             board.markCell(3, 'O');
             board.markCell(5, 'X');
-            assertEquals("X |   |  \nO |   | X\n  |   |  \n", board.displayBoard());
+            assertEquals("The board does not look the same!", "X |   |  \nO |   | X\n  |   |  \n", board.displayBoard());
         }
 
         @Test
@@ -64,7 +64,8 @@ public class BoardTest {
             board.markCell(6, 'O');
             board.markCell(7, 'X');
             board.markCell(8, 'X');
-            assertEquals("X | X | O\nX | X | X\nO | X | X\n", board.displayBoard());
+            assertEquals("The board does not look the same, should be Full", 
+                        "X | X | O\nX | X | X\nO | X | X\n", board.displayBoard());
         }
 
         @Test
@@ -72,7 +73,7 @@ public class BoardTest {
             final Board board = new Board();
             board.markCell(1, 'X');
             board.markCell(4, 'O');
-            assertFalse(board.isFull());
+            assertFalse("Should return False, but returns True", board.isFull());
         }
 
         @Test
@@ -87,13 +88,13 @@ public class BoardTest {
             board.markCell(6, 'O');
             board.markCell(7, 'X');
             board.markCell(8, 'X');
-            assertTrue(board.isFull());
+            assertTrue("Should return True, but returns False", board.isFull());
         }
 
         @Test
         public void isWinnerTest() {
             final Board board = new Board();
-            assertFalse(board.isWinner());
+            assertFalse("Should return False, but returns True", board.isWinner());
         }
 
         @Test
@@ -102,7 +103,7 @@ public class BoardTest {
             board.markCell(0, 'X');
             board.markCell(1, 'X');
             board.markCell(2, 'X');
-            assertTrue(board.isWinner());
+            assertTrue("Should return True, but returns False", board.isWinner());
         }
 
         @Test
@@ -111,7 +112,7 @@ public class BoardTest {
             board.markCell(0, 'O');
             board.markCell(3, 'O');
             board.markCell(6, 'O');
-            assertTrue(board.isWinner());
+            assertTrue("Should return True, but returns False", board.isWinner());
         }
 
         @Test
@@ -126,13 +127,13 @@ public class BoardTest {
         public void testGetCellSign() {
             final Board board = new Board();
             board.markCell(3, 'O');
-            assertEquals('O', board.getCellSign(3));
+            assertEquals("The cell sign was not O", 'O', board.getCellSign(3));
         }
 
         @Test 
         public void testIsMarked() {
             final Board board = new Board();
             board.markCell(3, 'O');
-            assertFalse(board.markCell(3, 'X'));
+            assertFalse("Should return False, but returns True", board.markCell(3, 'X'));
         }
 }
