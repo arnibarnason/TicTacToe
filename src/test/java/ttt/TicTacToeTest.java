@@ -1,5 +1,7 @@
 package ttt;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 
 public class TicTacToeTest {
@@ -7,68 +9,73 @@ public class TicTacToeTest {
 	@Test
 	public void testIncreaseRound()
 	{
-		TicTacToe ttt = new TicTacToe();
+		final TicTacToe ttt = new TicTacToe();
 		ttt.increaseRound();
-		assertEquals(1, ttt.getRound());
+		assertEquals("Returned wrong number, sould be 1", 1, ttt.getRound());
 	}
 	
 	@Test
 	public void testGetPlayer1() {
-		TicTacToe ttt = new TicTacToe();
-		assertEquals("Player 1", ttt.getPlayer1().getName());
+		final TicTacToe ttt = new TicTacToe();
+		assertEquals("The name wa not Player 1", "Player 1", ttt.getPlayer1().getName());
 	}
 
 	@Test
 	public void testGetPlayer2() {
-		TicTacToe ttt = new TicTacToe();
-		assertEquals("Player 2", ttt.getPlayer2().getName());
+		final TicTacToe ttt = new TicTacToe();
+		assertEquals("The name was not Player 2", "Player 2", ttt.getPlayer2().getName());
 	}
 	
 	@Test
 	public void testSwitchPlayer() {
-		TicTacToe ttt = new TicTacToe();
-		assertEquals("Player 1", ttt.switchPlayer().getName());
+		final TicTacToe ttt = new TicTacToe();
+		assertEquals("Should return Player 1 but dit not", "Player 1", ttt.switchPlayer().getName());
+	}
+
+	@Test
+	public void testSwitchPlayerAfterIncreaseRound() {
+		final TicTacToe ttt = new TicTacToe();
 		ttt.increaseRound();
-		assertEquals("Player 2", ttt.switchPlayer().getName());
+		assertEquals("Should return Player 2 but dit not", "Player 2", ttt.switchPlayer().getName());
 	}
 
 	@Test
 	public void testScoreMessageInBeginning() {
-		TicTacToe ttt = new TicTacToe();
-		assertEquals("Player 1: 0 : Player 2: 0", ttt.scoreMessage());
+		final TicTacToe ttt = new TicTacToe();
+		assertEquals("The score message did not return the right message.", "Player 1: 0 : Player 2: 0", ttt.scoreMessage());
 	}
 
 	@Test
 	public void testScoreMessageAfterSeveralGames() {
-		TicTacToe ttt = new TicTacToe();
+		final TicTacToe ttt = new TicTacToe();
 		ttt.getPlayer1().increaseScore();
 		ttt.getPlayer1().increaseScore();
 		ttt.getPlayer2().increaseScore();
 		ttt.getPlayer2().increaseScore();
 		ttt.getPlayer2().increaseScore();
-		assertEquals("Player 1: 2 : Player 2: 3", ttt.scoreMessage());
+		assertEquals("The score message did not return the right message.", "Player 1: 2 : Player 2: 3", ttt.scoreMessage());
 	}
 
 	@Test
 	public void testIsOverFalseInBeginning() {
-		TicTacToe ttt = new TicTacToe();
-		assertEquals(false, ttt.isOver());
+		final TicTacToe ttt = new TicTacToe();
+		assertFalse("Did not return false.", ttt.isOver());
 	}
 
 	@Test
 	public void testIsOverTrueAfterPlayerWins() {
-		TicTacToe ttt = new TicTacToe();
+		final TicTacToe ttt = new TicTacToe();
 		ttt.playCell(0);
 		ttt.playCell(3);
 		ttt.playCell(1);
 		ttt.playCell(4);
 		ttt.playCell(2);
-		assertEquals(true, ttt.isOver());
+		assertTrue("Did not return true", ttt.isOver());
 	}
 
 	@Test
 	public void testIsOverTrueAfterAllCellsMarked() {
-		TicTacToe ttt = new TicTacToe();
+		final TicTacToe ttt = new TicTacToe();
 		ttt.playCell(0);
 		ttt.playCell(1);
 		ttt.playCell(2);
@@ -78,15 +85,15 @@ public class TicTacToeTest {
 		ttt.playCell(6);
 		ttt.playCell(7);
 		ttt.playCell(8);
-		assertEquals(true, ttt.isOver());
+		assertTrue("Did not return true", ttt.isOver());
 	}
 
 	@Test
 	public void testReset(){
-		TicTacToe ttt = new TicTacToe();
+		final TicTacToe ttt = new TicTacToe();
 		ttt.increaseRound();
 		ttt.Reset();
-		assertEquals(0, ttt.getRound());
+		assertEquals("Reset did not reset the rounds", 0, ttt.getRound());
 	}
 
 }
