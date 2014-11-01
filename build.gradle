@@ -102,7 +102,7 @@ task seleniumXvfb(type: Test, dependsOn: installApp) {
     }
 }
 pmd {
-  reportsDir = file('build/pmd')
+  reportsDir = file('build/reports/pmd/html')
   ignoreFailures = true
   ruleSets = [
             'java-android',
