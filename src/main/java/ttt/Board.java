@@ -43,8 +43,7 @@ public class Board {
 							this._board[i][j].setSign(sign);
 							this._board[i][j].setChecked();
 							return true;
-						}
-							
+						}		
 					}
 					count++;
 				}
@@ -108,7 +107,7 @@ public class Board {
 			this._board[1][1].getSign() == this._board[2][2].getSign()) {
 			return true;
 		}
-		if(_board[2][0].isChecked() &&
+		if(this._board[2][0].isChecked() &&
 			this._board[2][0].getSign() == this._board[1][1].getSign() &&
 			this._board[1][1].getSign() == this._board[0][2].getSign()) {
 			return true;

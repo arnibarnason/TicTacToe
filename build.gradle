@@ -111,7 +111,6 @@ pmd {
         'java-clone',
         'java-coupling',
         'java-codesize',
-        'java-controversial',
         'java-design',
         'java-empty',
         'java-finalizers',
