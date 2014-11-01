@@ -1,5 +1,4 @@
 package ttt;
-import java.util.Scanner;
 
 public class TicTacToe {
 	private Board _board;
