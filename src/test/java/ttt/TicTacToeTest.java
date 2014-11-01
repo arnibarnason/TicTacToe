@@ -40,6 +40,14 @@ public class TicTacToeTest {
 	}
 
 	@Test
+	public void testSwitchPlayerAfterIncreaseGame() {
+		final TicTacToe ttt = new TicTacToe();
+		ttt.increaseGames();
+		ttt.increaseRound();
+		assertEquals("Should return Player 1 but dit not", "Player 1", ttt.switchPlayer().getName());
+	}
+
+	@Test
 	public void testScoreMessageInBeginning() {
 		final TicTacToe ttt = new TicTacToe();
 		assertEquals("The score message did not return the right message.", "Player 1: 0 | Player 2: 0 | Ties: 0", ttt.scoreMessage());

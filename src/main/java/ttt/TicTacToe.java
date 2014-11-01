@@ -2,8 +2,8 @@ package ttt;
 
 public class TicTacToe {
 	private Board _board;
-	private Player _player1;
-	private Player _player2;
+	private final Player _player1;
+	private final Player _player2;
 	private int _round;
 	private int _ties;
 	private int _games;
@@ -34,6 +34,14 @@ public class TicTacToe {
 
 	public int getRound() {
 		return _round;
+	}
+
+	public void increaseGames() {
+		_games++;
+	}
+
+	public int getGames() {
+		return _games;
 	}
 
 	public void increaseTies() {
