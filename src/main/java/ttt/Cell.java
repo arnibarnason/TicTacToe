@@ -33,6 +33,7 @@ public class Cell {
 		return _number;
 	}
 
+	/*
 	public boolean getPartOfWinningLine() {
 		return _partOfWinningLine;
 	}
@@ -40,4 +41,5 @@ public class Cell {
 	public void setPartOfWinningLine() {
 		_partOfWinningLine = true;
 	}
+	*/
 }
