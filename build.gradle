@@ -132,10 +132,3 @@ pmd {
         'java-unusedcode'
   ]
 }
-
-script {
-  - "npm test --coverage"
-  - "java ./TicTacToe/bin/* check-coverage --statements 90 --branches 90 --lines 90 --functions 90"
-}
-
-
