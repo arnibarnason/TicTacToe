@@ -34,7 +34,7 @@ public class TicTacToe {
 
 	public int getRound() {
 		return _round;
-	}
+	}	
 
 	public void increaseGames() {
 		_games++;
