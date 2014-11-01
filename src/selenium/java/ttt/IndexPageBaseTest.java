@@ -40,14 +40,25 @@ public class IndexPageBaseTest {
         driver.get(baseUrl + "/");
         assertEquals("The title was not Erkimoddarar", "Erkimoddarar", driver.getTitle());
     }
-    /*
+    
     @Test
     public void assertTitleGame() {
         driver.get(baseUrl + "/");
         driver.findElement(By.id("play")).click();
         assertEquals("The title was not Erkimoddarar - Game", "Erkimoddarar - Game", driver.getTitle());
     }
-    */
+    
+    @Test
+    public void assertPlayer1Plays() {
+        driver.get(baseUrl + "/");
+        driver.findElement(By.id("play")).click();
+        driver.findElement(By.id("0")).click();
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("0")), "X"));
+        assertEquals("The mark for player1 was not X", "X", driver.findElement(By.id("0")).getText());
+    }
+
+    
 
 
 
