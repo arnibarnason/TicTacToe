@@ -6,6 +6,7 @@ public class TicTacToe {
 	private Player _player2;
 	private int _round;
 	private int _ties;
+	private int _games;
 	
 	public TicTacToe() {
 		_board = new Board();
@@ -13,6 +14,7 @@ public class TicTacToe {
 		_player2 = new Player("Player 2", 'O');
 		_round = 0;
 		_ties = 0;
+		_games = 0;
 	}	
 
 	public void Reset() {
@@ -51,12 +53,18 @@ public class TicTacToe {
 	}
 	
 	public Player switchPlayer(){
-
-		if(_round % 2 == 0) {
-			return getPlayer1();
-		}
-		else {
-			return getPlayer2();
+		if(_games % 2 == 0 ) {
+			if(_round % 2 == 0) {
+				return getPlayer1();
+			} else {
+				return getPlayer2();
+			}
+		} else {
+			if(_round % 2 == 0) {
+				return getPlayer2();
+			} else {
+				return getPlayer1();
+			}	
 		}
 	} 
 
@@ -64,10 +72,12 @@ public class TicTacToe {
 		if(_board.isWinner()) {
 			_round--;
 			switchPlayer().increaseScore();
+			_games++;
 			Reset();
 			return true;
 		} else if(_board.isFull()) {
 			Reset();
+			_games++;
 			increaseTies();
 			return true;
 		} else {
