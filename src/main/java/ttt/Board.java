@@ -46,7 +46,7 @@ public class Board {
 			}			
 		}
 		else{
-			String exceptionMessage = "Sign must be either X or O";
+			final String exceptionMessage = "Sign must be either X or O";
 			throw new IllegalArgumentException(exceptionMessage);
 		}	
 		return false;
@@ -116,7 +116,7 @@ public class Board {
 	}
 
 
-	public char getCellSign(int number) {
+	public char getCellSign(final int number) {
 		int count = 0;
 		for (int i = 0; i < _maxRows; i++) {
 				for (int j = 0; j < _maxColumns; j++) {
