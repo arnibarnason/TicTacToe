@@ -58,7 +58,18 @@ public class IndexPageBaseTest {
         assertEquals("The mark for player1 was not X", "X", driver.findElement(By.id("0")).getText());
     }
 
-    
+    @Test
+    public void assertPlayer2Plays() {
+        driver.get(baseUrl + "/");
+        driver.findElement(By.id("play")).click();
+        driver.findElement(By.id("2")).click();
+        driver.findElement(By.id("4")).click();
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("2")), "X"));
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("4")), "O"));
+        assertEquals("The mark for player1 was not X", "X", driver.findElement(By.id("2")).getText());
+        assertEquals("The mark for player2 was not O", "O", driver.findElement(By.id("4")).getText());
+    }
 
 
 
