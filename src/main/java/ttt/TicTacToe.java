@@ -6,7 +6,6 @@ public class TicTacToe {
 	private Player _player1;
 	private Player _player2;
 	private int _round;
-	private int _ties;
 	
 	public TicTacToe() {
 		_board = new Board();
