@@ -5,10 +5,11 @@ import org.junit.Test;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
 
 public class BoardTest {
+
+        @Rule
+        public ExpectedException thrown = ExpectedException.none();
 
 		public static void main(String[] args) {
 			org.junit.runner.JUnitCore.main("ttt.BoardTest");
@@ -16,17 +17,14 @@ public class BoardTest {
 
 		@Test
         public void testSignIsCorrect () {
-        	Board board = new Board();
+        	final Board board = new Board();
         	board.markCell(3, 'X');
-            assertEquals('X', board.getBoard()[1][0].getSign());
+            assertEquals("X does not equal cell 3",'X', board.getBoard()[1][0].getSign());
         }
-
-        @Rule
-        public ExpectedException thrown = ExpectedException.none();
 
         @Test
         public void testNumberIsInCorrectRange () {
-        	Board board = new Board();
+        	final Board board = new Board();
 
         	thrown.expect(IllegalArgumentException.class);
         	thrown.expectMessage(equalTo("Number must be from 0 to 8"));
@@ -36,7 +34,7 @@ public class BoardTest {
 
         @Test
         public void testThatSignIsEitherXorO () {
-            Board board = new Board();
+            final Board board = new Board();
             thrown.expect(IllegalArgumentException.class);
             thrown.expectMessage(equalTo("Sign must be either X or O"));
 
@@ -45,7 +43,7 @@ public class BoardTest {
 
         @Test
         public void displayBoardTest() {
-            Board board = new Board();
+            final Board board = new Board();
             board.markCell(0, 'X');
             board.markCell(3, 'O');
             board.markCell(5, 'X');
@@ -54,7 +52,7 @@ public class BoardTest {
 
         @Test
         public void displayBoardTest2() {
-            Board board = new Board();
+            final Board board = new Board();
             board.markCell(0, 'X');
             board.markCell(1, 'X');
             board.markCell(2, 'O');
@@ -69,7 +67,7 @@ public class BoardTest {
 
         @Test
         public void isFullTest() {
-            Board board = new Board();
+            final Board board = new Board();
             board.markCell(1, 'X');
             board.markCell(4, 'O');
             assertEquals(false, board.isFull());
@@ -77,7 +75,7 @@ public class BoardTest {
 
         @Test
         public void isFullTest2() {
-            Board board = new Board();
+            final Board board = new Board();
             board.markCell(0, 'X');
             board.markCell(1, 'X');
             board.markCell(2, 'O');
@@ -92,13 +90,13 @@ public class BoardTest {
 
         @Test
         public void isWinnerTest() {
-            Board board = new Board();
+            final Board board = new Board();
             assertEquals(false, board.isWinner());
         }
 
         @Test
         public void isWinnerTestHorizontal() {
-            Board board = new Board();
+            final Board board = new Board();
             board.markCell(0, 'X');
             board.markCell(1, 'X');
             board.markCell(2, 'X');
@@ -107,7 +105,7 @@ public class BoardTest {
 
         @Test
         public void isWinnerTestVertical() {
-            Board board = new Board();
+            final Board board = new Board();
             board.markCell(0, 'O');
             board.markCell(3, 'O');
             board.markCell(6, 'O');
@@ -116,7 +114,7 @@ public class BoardTest {
 
         @Test
         public void isWinnerDiagonal() {
-            Board board = new Board();
+            final Board board = new Board();
             board.markCell(2, 'X');
             board.markCell(4, 'X');
             board.markCell(6, 'X');
@@ -124,7 +122,7 @@ public class BoardTest {
 
         @Test 
         public void testGetCellSign() {
-            Board board = new Board();
+            final Board board = new Board();
             board.markCell(3, 'O');
             assertEquals('O', board.getCellSign(3));
 
@@ -132,7 +130,7 @@ public class BoardTest {
 
         @Test 
         public void testIsMarked() {
-            Board board = new Board();
+            final Board board = new Board();
             board.markCell(3, 'O');
             assertEquals(false, board.markCell(3, 'X'));
 
