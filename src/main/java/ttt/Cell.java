@@ -3,10 +3,10 @@ package ttt;
 public class Cell {
 	private char _sign;
 	private boolean _isChecked;
-	private int _number;
+	private final int _number;
 	private boolean _partOfWinningLine;
 
-	public Cell(int number) {
+	public Cell(final int number) {
 		_sign = ' ';
 		_isChecked = false;
 		_number = number;
@@ -25,7 +25,7 @@ public class Cell {
 		return _sign;
 	}
 
-	public void setSign(char sign) {
+	public void setSign(final char sign) {
 		_sign = sign;
 	}
 
