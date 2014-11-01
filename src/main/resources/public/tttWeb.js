@@ -14,24 +14,14 @@ $(document).ready(function() {
                 url: "/id",
                 data: "id=" + number
             }).done(function(result) {
-                /*if (result === "X" || result === "O") {
-                    $("#" + number).html(result);
-                } else {
-                    $("#score").html(result);
-                    clearBoard();
-                }*/
                 if(result.substr(0, 1) == "W") {
                     $("#" + number).html(result.substr(1, 2));
                     $("#score").html(result.substr(2));
-                    //alert("VICTORY!");
                     clearBoard();
                 }
                 else {
                     $("#" + number).html(result);
                 }
-
-                
-                
             });
             event.preventDefault();
         };
@@ -45,6 +35,7 @@ function newGame() {
         url: "/newGame",
     }).done(function(result) {
         $("#score").html(result);
+        clearBoard();
     });
 }
 
