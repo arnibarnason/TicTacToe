@@ -21,7 +21,7 @@ public class BoardTest {
         public void testSignIsCorrect () {
         	final Board board = new Board();
         	board.markCell(3, 'X');
-            assertEquals("X does not equal cell 3",'X', board.getBoard()[1][0].getSign());
+            assertEquals('X', board.getBoard()[1][0].getSign());
         }
 
         @Test

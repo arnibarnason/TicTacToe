@@ -44,7 +44,7 @@ public class IndexPageBaseTest {
     @Test
     public void assertTitleGame() {
         driver.get(baseUrl + "/");
-        driver.findElement(by.id("play")).click();
+        driver.findElement(By.id("play")).click();
         assertEquals("The title was not Erkimoddarar - Game", "Erkimoddarar - Game", driver.getTitle());
     }
 
