@@ -9,7 +9,8 @@ jdk:
 - oraclejdk7
 before_script:
 - ./gradlew check
-- echo $STAGING_KEY > .travis/staging_deploy_key.pem
+- echo $STAGING_KEY > .travis/staging_deploy_key_enc.pem
+- openssl aes-256-cbc -d -a -in .travis/staging_deploy_key_enc.pem -out .travis/staging_deploy_key.pem -pass "pass:"
 - chmod 600 .travis/staging_deploy_key.pem
 - eval `ssh-agent -s`
 - ssh-add .travis/staging_deploy_key.pem
