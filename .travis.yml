@@ -9,7 +9,7 @@ jdk:
 - oraclejdk7
 before_script:
 - ./gradlew check
-- cat $STAGING_KEY > .travis/staging_deploy_key.pem
+- echo $STAGING_KEY > .travis/staging_deploy_key.pem
 - chmod 600 .travis/staging_deploy_key.pem
 - ssh-add .travis/staging_deploy_key.pem
 - git remote add deploy git@heroku.com:erkimoddarar-staging.git
