@@ -198,4 +198,25 @@ public class IndexPageBaseTest {
         driver.close();
     }
 
+    
+    @Test
+    public void assertTwoDifferentPlayersClickingSameField() {
+        driver = new FirefoxDriver();
+        baseUrl = "http://erkimoddarar.herokuapp.com";
+        driver.get(baseUrl + "/");
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        driver.findElement(By.id("play")).click();
+
+        driver.findElement(By.id("0")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("0")), "X"));
+        driver.findElement(By.id("0")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("0")), "X"));
+        driver.findElement(By.id("1")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("1")), "O"));
+        
+        assertEquals("The mark for player1 was not X", "X", driver.findElement(By.id("0")).getText());
+        assertEquals("The mark for player2 was not O", "O", driver.findElement(By.id("1")).getText());
+        driver.close();
+    } 
+
 }
