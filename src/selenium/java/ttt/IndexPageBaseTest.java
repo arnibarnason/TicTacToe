@@ -166,7 +166,6 @@ public class IndexPageBaseTest {
         driver.findElement(By.id("5")).click();
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("5")), "O"));
         driver.findElement(By.id("8")).click();
-
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("score")), "Player 1: 0 | Player 2: 0 | Ties: 1"));
         
         assertEquals("Score text for not right", "Player 1: 0 | Player 2: 0 | Ties: 1", driver.findElement(By.id("score")).getText());
@@ -175,7 +174,28 @@ public class IndexPageBaseTest {
 
     @Test
     public void assertNewGameButton() {
+        driver = new FirefoxDriver();
+        baseUrl = "http://erkimoddarar.herokuapp.com";
+        driver.get(baseUrl + "/");
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        driver.findElement(By.id("play")).click();
+
+        driver.findElement(By.id("0")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("0")), "X"));
+        driver.findElement(By.id("3")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("3")), "O"));
+        driver.findElement(By.id("1")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("1")), "X"));
+        driver.findElement(By.id("4")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("4")), "O"));
+        driver.findElement(By.id("2")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("score")), "Player 1: 1 | Player 2: 0 | Ties: 0"));
+        driver.findElement(By.id("newGame")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("score")), "Player 1: 0 | Player 2: 0 | Ties: 0"));
         
+        assertEquals("NewGame button doesn't work", "Player 1: 0 | Player 2: 0 | Ties: 0", driver.findElement(By.id("score")).getText());
+        assertEquals("NewGame button doesn´t work", "", driver.findElement(By.id("0")).getText());
+        driver.close();
     }
 
 }
