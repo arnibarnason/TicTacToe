@@ -173,6 +173,9 @@ public class IndexPageBaseTest {
         driver.close();
     }
 
-
+    @Test
+    public void assertNewGameButton() {
+        
+    }
 
 }
