@@ -6,19 +6,17 @@ import spark.servlet.SparkApplication;
 import ttt.TicTacToe;
 
 public class TicTacToeWeb implements SparkApplication {
+	private TicTacToe game;
 	public static void main(String[] args) {
 		staticFileLocation("/public");
-		SparkApplication tttWeb = new TicTacToeWeb();
-		String port = System.getenv("PORT");
+		final SparkApplication tttWeb = new TicTacToeWeb();
+		final String port = System.getenv("PORT");
 		if (port != null) {
             setPort(Integer.valueOf(port));
         } 
-        
-
         tttWeb.init();
 	}
 
-    private TicTacToe game;
 
     public void init() {
         
@@ -37,8 +35,8 @@ public class TicTacToeWeb implements SparkApplication {
         post(new Route("/id") {
             @Override
             public Object handle(final Request request, final Response response) {
-                Integer cell = Integer.valueOf(request.queryParams("id"));
-                String sign = game.playCell(cell);
+                final Integer cell = Integer.valueOf(request.queryParams("id"));
+                final String sign = game.playCell(cell);
                 if(game.isOver()) {
                     return "W" + sign + game.scoreMessage();
                 } else {

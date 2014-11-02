@@ -105,11 +105,9 @@ pmd {
   reportsDir = file('build/reports/pmd/html')
   ignoreFailures = true
   ruleSets = [
-            'java-android',
         'java-basic',
         'java-braces',
         'java-clone',
-        'java-coupling',
         'java-codesize',
         'java-design',
         'java-empty',
