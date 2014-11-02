@@ -20,22 +20,6 @@ public class IndexPageBaseTest {
     static String baseUrl;
     static String port;
 
-    /*
-    @BeforeClass
-    public static void before() {
-        // Will be run before all tests in class are run
-        driver = new FirefoxDriver();
-        baseUrl = "http://erkimoddarar-staging.herokuapp.com";
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    }
-
-    @AfterClass
-    public static void after() {
-        // Will be run after all tests in class have run
-        driver.close();
-    }
-    */
-
     @Test
     public void assertTitle() {
         driver = new FirefoxDriver();
@@ -108,6 +92,32 @@ public class IndexPageBaseTest {
     }
 
     @Test
+    public void assertPlayer2StartsWhenFirstGameIsOver() {
+        driver = new FirefoxDriver();
+        baseUrl = "http://erkimoddarar.herokuapp.com";
+        driver.get(baseUrl + "/");
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        driver.findElement(By.id("play")).click();
+
+        driver.findElement(By.id("0")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("0")), "X"));
+        driver.findElement(By.id("3")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("3")), "O"));
+        driver.findElement(By.id("1")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("1")), "X"));
+        driver.findElement(By.id("4")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("4")), "O"));
+        driver.findElement(By.id("2")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("score")), "Player 1: 1 | Player 2: 0 | Ties: 0"));
+
+        driver.findElement(By.id("0")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("0")), "O"));
+
+        assertEquals("Player 2 didnt't start round 2", "O", driver.findElement(By.id("0")).getText());
+        driver.close();
+    }
+
+    @Test
     public void assertPlayer1WinsAndThenPlayer2() {
         driver = new FirefoxDriver();
         baseUrl = "http://erkimoddarar.herokuapp.com";
@@ -166,7 +176,6 @@ public class IndexPageBaseTest {
         driver.findElement(By.id("5")).click();
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("5")), "O"));
         driver.findElement(By.id("8")).click();
-
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("score")), "Player 1: 0 | Player 2: 0 | Ties: 1"));
         
         assertEquals("Score text for not right", "Player 1: 0 | Player 2: 0 | Ties: 1", driver.findElement(By.id("score")).getText());
@@ -175,7 +184,47 @@ public class IndexPageBaseTest {
 
     @Test
     public void assertNewGameButton() {
+        driver = new FirefoxDriver();
+        baseUrl = "http://erkimoddarar.herokuapp.com";
+        driver.get(baseUrl + "/");
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        driver.findElement(By.id("play")).click();
+
+        driver.findElement(By.id("0")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("0")), "X"));
+        driver.findElement(By.id("3")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("3")), "O"));
+        driver.findElement(By.id("1")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("1")), "X"));
+        driver.findElement(By.id("4")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("4")), "O"));
+        driver.findElement(By.id("2")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("score")), "Player 1: 1 | Player 2: 0 | Ties: 0"));
+        driver.findElement(By.id("newGame")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("score")), "Player 1: 0 | Player 2: 0 | Ties: 0"));
         
+        assertEquals("NewGame button doesn't work", "Player 1: 0 | Player 2: 0 | Ties: 0", driver.findElement(By.id("score")).getText());
+        assertEquals("NewGame button doesn´t work", "", driver.findElement(By.id("0")).getText());
+        driver.close();
     }
 
+    @Test
+    public void assertTwoDifferentPlayersClickingSameField() {
+        driver = new FirefoxDriver();
+        baseUrl = "http://erkimoddarar.herokuapp.com";
+        driver.get(baseUrl + "/");
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        driver.findElement(By.id("play")).click();
+
+        driver.findElement(By.id("0")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("0")), "X"));
+        driver.findElement(By.id("0")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("0")), "X"));
+        driver.findElement(By.id("1")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("1")), "O"));
+        
+        assertEquals("The mark for player1 was not X", "X", driver.findElement(By.id("0")).getText());
+        assertEquals("The mark for player2 was not O", "O", driver.findElement(By.id("1")).getText());
+        driver.close();
+    } 
 }
