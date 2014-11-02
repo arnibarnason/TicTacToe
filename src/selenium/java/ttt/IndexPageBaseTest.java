@@ -39,7 +39,7 @@ public class IndexPageBaseTest {
     @Test
     public void assertTitle() {
         driver = new FirefoxDriver();
-        baseUrl = "http://erkimoddarar-staging.herokuapp.com";
+        baseUrl = "http://erkimoddarar.herokuapp.com";
         driver.get(baseUrl + "/");
         assertEquals("The title was not Erkimoddarar", "Erkimoddarar", driver.getTitle());
         driver.close();
@@ -48,7 +48,7 @@ public class IndexPageBaseTest {
     @Test
     public void assertTitleGame() {
         driver = new FirefoxDriver();
-        baseUrl = "http://erkimoddarar-staging.herokuapp.com";
+        baseUrl = "http://erkimoddarar.herokuapp.com";
         driver.get(baseUrl + "/");
         driver.findElement(By.id("play")).click();
         assertEquals("The title was not Erkimoddarar - Game", "Erkimoddarar - Game", driver.getTitle());
@@ -58,7 +58,7 @@ public class IndexPageBaseTest {
     @Test
     public void assertPlayersMarks() {
         driver = new FirefoxDriver();
-        baseUrl = "http://erkimoddarar-staging.herokuapp.com";
+        baseUrl = "http://erkimoddarar.herokuapp.com";
         driver.get(baseUrl + "/");
         WebDriverWait wait = new WebDriverWait(driver,30);
         driver.findElement(By.id("play")).click();
@@ -71,7 +71,7 @@ public class IndexPageBaseTest {
     @Test
     public void assertPlayersMarks2() {
         driver = new FirefoxDriver();
-        baseUrl = "http://erkimoddarar-staging.herokuapp.com";
+        baseUrl = "http://erkimoddarar.herokuapp.com";
         driver.get(baseUrl + "/");
         WebDriverWait wait = new WebDriverWait(driver,30);
         driver.findElement(By.id("play")).click();
@@ -87,7 +87,7 @@ public class IndexPageBaseTest {
     @Test
     public void assertPlayerWins() {
         driver = new FirefoxDriver();
-        baseUrl = "http://erkimoddarar-staging.herokuapp.com";
+        baseUrl = "http://erkimoddarar.herokuapp.com";
         driver.get(baseUrl + "/");
         WebDriverWait wait = new WebDriverWait(driver,30);
         driver.findElement(By.id("play")).click();
