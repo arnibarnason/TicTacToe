@@ -1,5 +1,3 @@
-language: java
-notifications:
   email:
   - nonni95@gmail.com
   - maggisig92@gmail.com
@@ -10,7 +8,8 @@ jdk:
 before_script:
 - ./gradlew check
 - echo $STAGING_KEY > .travis/staging_deploy_key_enc.pem
-- openssl aes-256-cbc -d -a -in .travis/staging_deploy_key_enc.pem -out .travis/staging_deploy_key.pem -pass "pass:"
+- openssl aes-256-cbc -d -a -in .travis/staging_deploy_key_enc.pem -out .travis/staging_deploy_key.pem
+  -pass "pass:"
 - chmod 600 .travis/staging_deploy_key.pem
 - eval `ssh-agent -s`
 - ssh-add .travis/staging_deploy_key.pem
@@ -18,6 +17,11 @@ before_script:
 - git push deploy
 script:
 - ./gradlew seleniumXvfb
+after_success:
+- chmod +x update-gh-pages.sh
+- ./update-gh-pages.sh
 env:
   matrix:
     secure: LfJgZmBOZjt52Ih6o14XShFisij1SLrStv/+ZnitJ6/J3rSKtryFIBMtfaEU/+pV9r4K6Kck50d9CytR5nBhR+byXl8wckl+Gs1VlcrRXzlpNyQtLYIGxTJ8RBFXzjrtD8xsp49mkL8uunDDbjT1A1XDaBQx0O17LL0v//TfAeU=
+  global:
+    secure: YX3zvDCWEpkF+jg/X1vNIlTUDNyCP0uNsqhev0Y6reCkyhacjkMu+zh7Udr+92eFznQ9kzHAUUiWGpOY8CqcXpX/OzbIQ0SgomsOI6WuVuPc/xZjMlbzCf6ShhVFF4wM/Uw2ruihsa6FSMljilnaagIozSwVdyIa9oEDNy/ic/I=
