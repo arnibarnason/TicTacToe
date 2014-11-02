@@ -49,7 +49,7 @@ public class IndexPageBaseTest {
     }
     
     @Test
-    public void assertPlayer1Plays() {
+    public void assertPlayersMarks() {
         driver.get(baseUrl + "/");
         driver.findElement(By.id("play")).click();
         driver.findElement(By.id("0")).click();
@@ -59,7 +59,7 @@ public class IndexPageBaseTest {
     }
 
     @Test
-    public void assertPlayer2Plays() {
+    public void assertPlayersMarks2() {
         driver.get(baseUrl + "/");
         driver.findElement(By.id("play")).click();
         driver.findElement(By.id("2")).click();
@@ -71,7 +71,23 @@ public class IndexPageBaseTest {
         assertEquals("The mark for player2 was not O", "O", driver.findElement(By.id("4")).getText());
     }
 
-    /*    
+    
+
+    /*
+    @Test
+    public void newGame() {
+        driver.findElement(By.id("newGame")).click();
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        assertEquals("Cell with id 0 was not empty cell", " ", driver.findElement(By.id("0")).getText());
+    }
+    */
+    /*
+    @Test
+    public void assertPlayerWins() {
+        
+    }
+    */
+    /*
     @Test
     public void assertThatBoardIsEmptyWhenPlayerWins() {
         driver.get(baseUrl + "/");
@@ -81,23 +97,22 @@ public class IndexPageBaseTest {
         driver.findElement(By.id("1")).click();
         driver.findElement(By.id("4")).click();
         driver.findElement(By.id("2")).click();
-        WebDriverWait wait = new WebDriverWait(driver,30);
-        
+        WebDriverWait wait = new WebDriverWait(driver,300);
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("0")), "X"));
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("3")), "O"));
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("1")), "X"));
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("4")), "O"));
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("2")), "X"));
-        
-        assertEquals("Cell with id 0 is empty cell", " ", driver.findElement(By.id("0")).getText());
-        assertEquals("Cell with id 1 is empty cell", " ", driver.findElement(By.id("1")).getText());
-        assertEquals("Cell with id 2 is empty cell", " ", driver.findElement(By.id("2")).getText());
-        assertEquals("Cell with id 3 is empty cell", " ", driver.findElement(By.id("3")).getText());
-        assertEquals("Cell with id 4 is empty cell", " ", driver.findElement(By.id("4")).getText());
-        assertEquals("Cell with id 5 is empty cell", " ", driver.findElement(By.id("5")).getText());
-        assertEquals("Cell with id 6 is empty cell", " ", driver.findElement(By.id("6")).getText());
-        assertEquals("Cell with id 7 is empty cell", " ", driver.findElement(By.id("7")).getText());
-        assertEquals("Cell with id 8 is empty cell", " ", driver.findElement(By.id("8")).getText());
+        assertEquals("The score was not right", "Player 1: 1 | Player 2: 1 | Ties: 0",driver.findElement(By.id("score")).getText());
+        assertEquals("Cell with id 0 was not empty cell", " ", driver.findElement(By.id("0")).getText());
+        assertEquals("Cell with id 1 was not empty cell", " ", driver.findElement(By.id("1")).getText());
+        assertEquals("Cell with id 2 was not empty cell", " ", driver.findElement(By.id("2")).getText());
+        assertEquals("Cell with id 3 was not empty cell", " ", driver.findElement(By.id("3")).getText());
+        assertEquals("Cell with id 4 was not empty cell", " ", driver.findElement(By.id("4")).getText());
+        assertEquals("Cell with id 5 was not empty cell", " ", driver.findElement(By.id("5")).getText());
+        assertEquals("Cell with id 6 was not empty cell", " ", driver.findElement(By.id("6")).getText());
+        assertEquals("Cell with id 7 was not empty cell", " ", driver.findElement(By.id("7")).getText());
+        assertEquals("Cell with id 8 was not empty cell", " ", driver.findElement(By.id("8")).getText());
     }
     */
 
