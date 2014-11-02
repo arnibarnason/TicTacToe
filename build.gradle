@@ -25,6 +25,13 @@ repositories {
 sourceSets {
     selenium
     seleniumXvfb
+
+    codeCov {
+	java {
+	    srcDir 'src/main/java/ttt'
+	    exclude 'TicTacToeWeb.java'
+	}
+    }
 }
 
 jar {
@@ -57,10 +64,24 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 
+
+task codeCov( type: Test, dependsOn: cleanTest ) {
+    jacoco {
+        destinationFile = file( "$buildDir/jacoco/jacocoTest.exec")
+        classDumpFile = file("$buildDir/jacoco/classpathdumps")
+    }
+    testClassesDir = sourceSets.codeCov.output.classesDir
+    classpath = sourceSets.codeCov.runtimeClasspath
+}
+
 jacocoTestReport {
     group = "Reporting"
     description = "Generate Jacoco coverage reports after running tests."
-    additionalSourceDirs = files(sourceSets.main.allJava.srcDirs)
+    additionalSourceDirs = files(sourceSets.codeCov.allJava.srcDirs)
+}
+
+jacocoTestReport.doFirst{
+    classDirectories = files('build/classes/codeCov/ttt')
 }
 
 task stage { 
@@ -129,4 +150,5 @@ pmd {
   ]
 }
 
-test.finalizedBy jacocoTestReport
+test.finalizedBy codeCov
+codeCov.finalizedBy jacocoTestReport

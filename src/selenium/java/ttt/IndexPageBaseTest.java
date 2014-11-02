@@ -25,7 +25,7 @@ public class IndexPageBaseTest {
     public static void before() {
         // Will be run before all tests in class are run
         driver = new FirefoxDriver();
-        baseUrl = "http://erkimoddarar.herokuapp.com";
+        baseUrl = "http://erkimoddarar-staging.herokuapp.com";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 

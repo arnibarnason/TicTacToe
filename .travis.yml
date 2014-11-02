@@ -7,11 +7,15 @@ notifications:
 jdk:
 - openjdk7
 - oraclejdk7
+before_script:
+- ./gradlew check
+- echo $STAGING_KEY > .travis/staging_deploy_key.pem
+- chmod 600 .travis/staging_deploy_key.pem
+- ssh-add .travis/staging_deploy_key.pem
+- git remote add deploy git@heroku.com:erkimoddarar-staging.git
+- git push deploy
 script:
-  - ./gradlew check
-  - ./gradlew seleniumXvfb
-deploy:
-    provider: heroku
-    api_key:
-      secure: LpFXABZR/s87HjMosG3vwTYOLRXQTVztdcwYZz6lHcbLjwAXcRMbwSeeVCaqBy8u7Twihw9OKNtbQ+pi3GpEWsa61+WrOQazv0OzOeY4rE5xFtt7c4V+TA6T3B+WMdhvEVh9JHYoiY5ioX0edsj2zflJSDDN5jtVP4/1NaBDyVU=
-    app: erkimoddarar
+- ./gradlew seleniumXvfb
+env:
+  matrix:
+    secure: LfJgZmBOZjt52Ih6o14XShFisij1SLrStv/+ZnitJ6/J3rSKtryFIBMtfaEU/+pV9r4K6Kck50d9CytR5nBhR+byXl8wckl+Gs1VlcrRXzlpNyQtLYIGxTJ8RBFXzjrtD8xsp49mkL8uunDDbjT1A1XDaBQx0O17LL0v//TfAeU=
